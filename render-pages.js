@@ -1,11 +1,16 @@
-import fetch from 'node-fetch'
-import { renderPages } from 'hyperapp-site-generator'
-import routes from './src/app/routes'
+const fetch = require('node-fetch')
 
-// Return URLs that need to be rendered
-const getUrls = async (pages) => {
-  // Omit the "Apod" page from pre-rendering
-  pages = pages.filter(page => page !== '/apod')
+const renderPages = require('hyperapp-site-generator/src/renderPages');
+
+(async () => {
+  let pages = [
+    '/',
+    '/project',
+    '/starter',
+    '/counter',
+    '/pokedex',
+    '/books'
+  ]
 
   // Get a list of pokemon pages
   const pokemonPages = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
@@ -15,8 +20,9 @@ const getUrls = async (pages) => {
   // Add pokemons pages to urls
   pages = pages.concat(pokemonPages)
 
-  return pages
-}
-
-renderPages(routes, getUrls)
-  .then('All pages rendered!')
+  renderPages(pages)
+    .then(() => {
+      console.log('All pages rendered!')
+      process.exit(0)
+    })
+})()

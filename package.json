@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "build": "rimraf .cache && rimraf dist && parcel build ./src/index.html --no-source-maps --detailed-report && workbox generateSW workbox-config.js",
-    "render-pages": "parcel build ./site-generator/render-pages.js --target node --no-minify --no-source-maps --detailed-report --no-content-hash && node ./dist/render-pages.js",
+    "render-pages": "npm run build && node ./render-pages.js",
     "init-git": "rm -rf .git && git init && git add . && git commit -m 'Boilerplate files'"
   },
   "babel": {
@@ -25,7 +25,8 @@
   "dependencies": {
     "emotion": "^10.0.9",
     "hyperapp": "^2.0.0-beta.22",
-    "hyperapp-site-generator": "0.0.3",
+    "hyperapp-site-generator": "0.0.7",
+    "node-fetch": "^2.6.0",
     "sanitize.css": "^10.0.0"
   },
   "devDependencies": {
