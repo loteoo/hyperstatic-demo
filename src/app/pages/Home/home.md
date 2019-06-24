@@ -2,9 +2,9 @@
 
 It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a configurable puppeteer script.
 
-This *layer* is a site generator / framework with goals similar to Gatsby.js, but it is simpler, lighter and is for building Hyperapp based websites.
+This *layer* is a npm package with goals similar to Gatsby.js, but it is simpler, lighter and is for building Hyperapp based websites.
 
-It is meant to be deployed on static hosting services like Netlify or Github Pages, which are often free, efficient, highly scalable and a lot more.
+It builds sites that are meant to be deployed on static hosting services like Netlify or Github Pages, which are often free, efficient, highly scalable and a lot more.
 
 Pages are bundled individually and loaded asynchronously at the right time using a very smart `<Link>` component. They all still share the same global state and run in the same Hyperapp instance.
 
