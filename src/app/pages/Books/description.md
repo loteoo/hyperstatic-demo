@@ -1,5 +1,5 @@
 ## Find a Book
 
-The entire bundle for this book searching module is 6kb.
+This book searching module is a 6kb self contained bundle.
 
-The only reference to it in the codebase of the website is in the `routes.js`, and then there is a `<Link></Link` component pointing to it.
+The only reference to it in the codebase of the website is in the `routes.js` and the `<Link>` that navigates to it.

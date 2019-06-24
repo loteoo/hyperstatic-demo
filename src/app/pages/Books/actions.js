@@ -1,5 +1,5 @@
 
-import { Http } from '../../utils'
+import { Http } from '../../../utils'
 
 // Nested setter helper
 const Setter = (state, fragment) => ({

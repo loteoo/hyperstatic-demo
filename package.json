@@ -7,6 +7,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "build": "rimraf .cache && rimraf dist && parcel build ./src/index.html --no-source-maps --detailed-report && workbox generateSW workbox-config.js",
+    "render-pages": "parcel build ./site-generator/render-pages.js --target node --no-minify --no-source-maps --detailed-report --no-content-hash && node ./dist/render-pages.js",
     "init-git": "rm -rf .git && git init && git add . && git commit -m 'Boilerplate files'"
   },
   "babel": {
@@ -24,7 +25,8 @@
   "dependencies": {
     "emotion": "^10.0.9",
     "hyperapp": "^2.0.0-beta.22",
-    "sanitize.css": "^8.0.1"
+    "hyperapp-site-generator": "0.0.3",
+    "sanitize.css": "^10.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
@@ -36,9 +38,10 @@
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-standard": "^4.0.0",
     "hygen": "^4.0.2",
+    "marked": "^0.6.2",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.1.2",
     "rimraf": "^2.6.3",

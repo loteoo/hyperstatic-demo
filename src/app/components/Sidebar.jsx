@@ -1,49 +1,45 @@
 
-import {Link} from '../../site-generator/Link'
-
-import {Invalid, Loading, Check} from './icons'
-
-
-const LinkWithStatus = ({state, to, bundleSize, ...props}, children) => {
-
-
-  const statusToSvg = {
-    'invalid': Invalid,
-    'iddle': () => <span>{bundleSize}</span>,
-    'loading': Loading,
-    'ready': Check,
-    'active': Check
+import { css } from 'emotion'
+import LinkWithStatus from './LinkWithStatus'
+const style = css`
+  width: 30%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+  .menu {
+    align-self: flex-end;
+    position: sticky;
+    top: 0;
+    max-width: 20rem;
+    margin: 6rem 0;
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    nav {
+      margin-bottom: auto;
+      >ul {
+        padding-left: 0;
+      }
+    }
+    * {
+      color: inherit;
+    }
   }
+`
 
-  const routes = Object.keys(state.routes).map(route => state.routes[route])
-  const matchedRoute = routes.find(route => route.pattern.match(to))
-  const active = to === state.location.path
-
-  const status = !matchedRoute
-    ? 'invalid'
-    : !matchedRoute.view && !matchedRoute.loading
-      ? 'iddle'
-      : matchedRoute.loading
-        ? 'loading'
-        : active
-          ? 'active'
-          : 'ready'
-
-  return (
-    <Link scrollToTop class={'menu-link ' + status} state={state} to={to} {...props}>
-      {children}
-      {statusToSvg[status]()}
-    </Link>
-  )
-}
-
-
-export default ({state}) => (
-  <aside class="aside">
+export default ({ state }) => (
+  <aside class={style}>
     <div class="menu">
       <header role="banner">
         <h1>Hyperapp site generator</h1>
-        <p>Static site generator with a fancy code splitting and navigation layer</p>
+        <p>Static site generator with a code splitting and navigation layer</p>
       </header>
       <nav role="navigation">
         <LinkWithStatus state={state} bundleSize="6kb" to="/">Home</LinkWithStatus>

@@ -1,20 +1,24 @@
 import { app } from 'hyperapp'
-import { LocationChanged } from '../site-generator/subscriptions'
-import { ParseUrl } from '../site-generator/actions'
+import { LocationChanged, ParseUrl, getInitialState } from 'hyperapp-site-generator'
 
-// Import CSS
+// Import best-practices defaults
 import 'sanitize.css'
+import 'sanitize.css/typography.css'
+import 'sanitize.css/forms.css'
+
+// Global styling
 import './global.css'
 
 // Import app
-import init from '../site-generator/init'
-import view from './view'
+import routes from './app/routes'
+import init from './app/init'
+import view from './app/view'
 
 // Initialize the app
 app({
-  init,
+  init: getInitialState(routes, init),
   view,
-  subscriptions: state => [
+  subscriptions: () => [
     LocationChanged({ action: ParseUrl })
   ],
   node: document.getElementById('app')

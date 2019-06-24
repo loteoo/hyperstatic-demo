@@ -1,5 +1,5 @@
 import markdown from './starter.md'
 
-export default state => (
+export default () => (
   <div innerHTML={markdown}></div>
 )

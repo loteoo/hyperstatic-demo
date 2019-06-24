@@ -1,9 +1,8 @@
 import { css } from 'emotion'
-import { targetValue } from '../../utils'
+import { targetValue } from '../../../utils'
 import { Init as BookInit, SearchBooks } from './actions'
 import BookPreview from './BookPreview'
 import description from './description.md'
-
 
 const pageStyle = css`
   input {
@@ -18,8 +17,6 @@ const pageStyle = css`
 `
 
 export default (state) => {
-
-
   return (
     <div class={pageStyle}>
       <div innerHTML={description}></div>
@@ -48,7 +45,5 @@ export default (state) => {
     </div>
   )
 }
-
-
 
 export const Init = BookInit

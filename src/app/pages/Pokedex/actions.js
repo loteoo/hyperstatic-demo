@@ -1,4 +1,4 @@
-import { Http, preloadImage } from '../../utils'
+import { Http, preloadImage } from '../../../utils'
 
 export const HandlePokedex = (state, response) => {
   const pokemons = response.pokemon.map(pokemon => ({

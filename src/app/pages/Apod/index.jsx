@@ -1,17 +1,8 @@
-import { css } from 'emotion'
 import description from './description.md'
-import {Http, preloadImage} from '../../utils'
-
-const style = css`
-  .viewer {
-    img {
-      width: 100%;
-    }
-  }
-`
+import { Http } from '../../../utils'
 
 export default (state) => (
-  <div class={style}>
+  <div>
     <div innerHTML={description}></div>
     {state.apod
       ? (
@@ -21,14 +12,12 @@ export default (state) => (
           <p>{state.apod.explanation}</p>
         </div>
       )
-      : <p>Loading picture...</p>
+      : <p>Waiting for <code>api.nasa.gov</code>...</p>
     }
   </div>
 )
 
-
 const HandlePicture = (state, data) => {
-  preloadImage
   return {
     ...state,
     apod: data
@@ -43,4 +32,3 @@ export const Init = (state) => [
     error: console.error
   })
 ]
-

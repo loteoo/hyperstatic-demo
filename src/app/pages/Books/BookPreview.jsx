@@ -1,6 +1,6 @@
 import { css } from 'emotion'
 
-import { Link } from '../../../site-generator/Link'
+import { Link } from 'hyperapp-site-generator'
 
 const style = css`
   display: block;
