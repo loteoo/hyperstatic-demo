@@ -32,12 +32,12 @@ export default state => (
       />
       {state.pokeSearch && <a style={{ margin: '1rem', cursor: 'pointer', textDecoration: 'underline' }} onclick={ClearSearch}>Clear</a>}
     </div>
-    <div style={grid}>
+    <div class={grid}>
       {state.pokemons
         ? state.pokemons
           .filter(pokemon => pokemon.name.toLowerCase().includes(state.pokeSearch.toLowerCase()))
           .map(pokemon => (
-            <div style={card}>
+            <div class={card}>
               <img src={pokemon.img} alt={pokemon.name} />
               <div style={{ padding: '0 1rem' }}>
                 <h3 style={{ margin: '0' }}>{pokemon.name}</h3>
