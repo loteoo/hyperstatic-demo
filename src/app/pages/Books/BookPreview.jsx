@@ -1,6 +1,6 @@
 import { css } from 'emotion'
 
-import {Link} from '../../../site-generator/Link'
+import { Link } from '../../../site-generator/Link'
 
 const style = css`
   display: block;
@@ -31,10 +31,7 @@ const style = css`
   }
 `
 
-
-
-
-export default ({book, state}) => (
+export default ({ book, state }) => (
   <Link to={`/books/${book.id}`} state={state} class={style}>
     <div class="top">
       <div class="img">
@@ -45,9 +42,9 @@ export default ({book, state}) => (
         <small>{book.volumeInfo.subtitle}</small>
         <div class="author">
           <p>Written By: </p>
-          {book.volumeInfo.authors && book.volumeInfo.authors.map((author => (
+          {book.volumeInfo.authors && book.volumeInfo.authors.map(author => (
             <span>{author}, </span>
-          )))}
+          ))}
         </div>
       </div>
     </div>

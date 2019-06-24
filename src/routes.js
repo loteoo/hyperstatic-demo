@@ -6,5 +6,5 @@ export default {
   '/pokedex': import('./pages/Pokedex'),
   '/apod': import('./pages/Apod'),
   '/books': import('./pages/Books/BookSearch'),
-  '/books/:id': import('./pages/Books/Book'),
+  '/books/:id': import('./pages/Books/Book')
 }

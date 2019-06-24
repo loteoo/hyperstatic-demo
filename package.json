@@ -9,7 +9,20 @@
     "build": "rimraf .cache && rimraf dist && parcel build ./src/index.html --no-source-maps --detailed-report && workbox generateSW workbox-config.js",
     "init-git": "rm -rf .git && git init && git add . && git commit -m 'Boilerplate files'"
   },
+  "babel": {
+    "plugins": [
+      [
+        "babel-plugin-jsx-pragmatic",
+        {
+          "module": "hyperapp",
+          "import": "h",
+          "export": "h"
+        }
+      ]
+    ]
+  },
   "dependencies": {
+    "emotion": "^10.0.9",
     "hyperapp": "^2.0.0-beta.22",
     "sanitize.css": "^8.0.1"
   },
@@ -24,6 +37,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-react": "^7.13.0",
     "hygen": "^4.0.2",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-static-files-copy": "^2.1.2",

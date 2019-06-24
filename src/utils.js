@@ -15,4 +15,3 @@ const fetchFx = (dispatch, props) =>
 export const Http = {
   get: (props) => [fetchFx, props]
 }
-

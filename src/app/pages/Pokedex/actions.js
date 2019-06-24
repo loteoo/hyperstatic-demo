@@ -1,5 +1,4 @@
-
-import {Http, preloadImage} from '../../utils'
+import { Http, preloadImage } from '../../utils'
 
 export const HandlePokedex = (state, response) => {
   const pokemons = response.pokemon.map(pokemon => ({
@@ -13,7 +12,6 @@ export const HandlePokedex = (state, response) => {
   }
 }
 
-
 export const Init = (state) => [
   {
     ...state,
@@ -24,7 +22,6 @@ export const Init = (state) => [
     action: HandlePokedex
   })
 ]
-
 
 export const SetPokeSearch = (state, pokeSearch) => ({
   ...state,

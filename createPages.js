@@ -2,7 +2,6 @@ import fetch from 'node-fetch'
 
 // Return URLs that need to be rendered
 export default async (pages) => {
-
   // Omit specific pages
   pages = pages.filter(page => page !== '/apod')
 

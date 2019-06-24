@@ -16,7 +16,5 @@ export const searchField = {
   margin: '0',
   padding: '0.5rem',
   border: '1px solid var(--border-color)',
-  borderRadius: '0.25rem',
+  borderRadius: '0.25rem'
 }
-
-

@@ -1,6 +1,5 @@
 
-
-import {LoadBookIfNeeded} from './actions'
+import { LoadBookIfNeeded } from './actions'
 
 import BookPreview from './BookPreview'
 

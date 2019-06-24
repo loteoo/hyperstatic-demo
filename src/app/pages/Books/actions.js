@@ -1,5 +1,5 @@
 
-import {Http} from '../../utils'
+import { Http } from '../../utils'
 
 // Nested setter helper
 const Setter = (state, fragment) => ({
@@ -36,10 +36,9 @@ export const SearchBooks = (state, search) => {
 const HandleResults = (state, response) => Setter(state, {
   isFetching: false,
   results: response.items.map(book => book.id),
-  books: response.items.reduce((books, book) => ({...books, [book.id]: book}), state.books.books),
+  books: response.items.reduce((books, book) => ({ ...books, [book.id]: book }), state.books.books),
   total: response.totalItems
 })
-
 
 export const LoadBookIfNeeded = (state, location) => {
   if (state.books && state.books.books[location.params.id]) {
