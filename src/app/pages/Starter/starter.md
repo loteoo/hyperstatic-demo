@@ -6,7 +6,7 @@ To easiest way to get started is to use this [starter template](https://github.c
 ---  
 
 
-#### Other wise, the installation in an existing project looks like this:  
+#### Otherwise, the installation in an existing project looks like this:  
 
 1. `npm i hyperapp-site-generator`
 
