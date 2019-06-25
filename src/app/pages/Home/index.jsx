@@ -1,5 +1,6 @@
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import markdown from './home.md'
 
 export default () => (
-  <div innerHTML={markdown}></div>
+  <div>{htmlToVdom(markdown)}</div>
 )
