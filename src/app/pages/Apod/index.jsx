@@ -1,5 +1,5 @@
 import description from './description.md'
-import { Http } from '../../../utils'
+import { Http, preloadImage } from '../../../utils'
 
 export default (state) => (
   <div>
@@ -18,6 +18,7 @@ export default (state) => (
 )
 
 const HandlePicture = (state, data) => {
+  preloadImage(data.url)
   return {
     ...state,
     apod: data
