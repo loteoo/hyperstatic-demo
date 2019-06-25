@@ -1,5 +1,6 @@
-
 import LinkWithStatus from './LinkWithStatus'
+
+import { Github } from './icons'
 
 export default ({ state }) => (
   <aside class="sidebar">
@@ -17,6 +18,10 @@ export default ({ state }) => (
         <LinkWithStatus state={state} bundleSize="3kb" to="/apod">APOD</LinkWithStatus>
         <LinkWithStatus state={state} bundleSize="3kb" to="/books">Book search</LinkWithStatus>
       </nav>
+      <footer>
+        <a href="https://github.com/loteoo/hyperapp-site-generator" target="_blank">Project <Github /></a>
+        <a href="https://github.com/loteoo/hyperapp-site-generator-demo" target="_blank">Demo site <Github /></a>
+      </footer>
     </div>
   </aside>
 )

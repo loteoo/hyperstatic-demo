@@ -139,6 +139,27 @@ img {
 }
 
 
+.sidebar footer {
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+}
+.sidebar footer a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar footer a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+
 
 .header {
   display: flex;
@@ -151,6 +172,61 @@ img {
     display: block;
   }
 }
+
+
+
+
+
+
+
+.link-with-status {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.link-with-status:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+.link-with-status:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.link-with-status small {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+.link-with-status.invalid {
+  color: var(--danger-color);
+}
+.link-with-status.invalid svg {
+  stroke: currentColor;
+}
+.link-with-status.loading {
+}
+.link-with-status.loading svg {
+  color: var(--warning-color);
+  stroke: currentColor;
+}
+.link-with-status.ready svg {
+  color: var(--success-color);
+  stroke: currentColor;
+}
+.link-with-status.active {
+  color: var(--accent-color);
+}
+.link-with-status.active svg {
+  color: var(--success-color);
+  stroke: currentColor;
+}
+.link-with-status span {
+  margin-left: auto;
+}
+
+
+
 
 
 
@@ -274,49 +350,3 @@ img {
 
 
 
-
-.link-with-status {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0;
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-}
-.link-with-status:not(:last-child) {
-  border-bottom: 1px solid var(--border-color);
-}
-.link-with-status:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-.link-with-status small {
-  margin-left: auto;
-  margin-right: 0.5rem;
-}
-.link-with-status.invalid {
-  color: var(--danger-color);
-}
-.link-with-status.invalid svg {
-  stroke: currentColor;
-}
-.link-with-status.loading {
-  }
-.link-with-status.loading svg {
-  color: var(--warning-color);
-  stroke: currentColor;
-}
-.link-with-status.ready svg {
-  color: var(--success-color);
-  stroke: currentColor;
-}
-.link-with-status.active {
-  color: var(--accent-color);
-}
-.link-with-status.active svg {
-  color: var(--success-color);
-  stroke: currentColor;
-}
-.link-with-status span {
-  margin-left: auto;
-}
