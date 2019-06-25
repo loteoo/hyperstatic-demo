@@ -27,7 +27,6 @@ export default ({ state, to, bundleSize, ...props }, children) => {
 
   return (
     <Link
-      scrollToTop
       class={{
         'link-with-status': true,
         [status]: true
