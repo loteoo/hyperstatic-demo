@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "hyperapp-site-generator-demo",
-  "description": "Hyperapp PWA boilerplate",
+  "description": "Hyperapp site generator demo",
   "author": "Alexandre Lotte",
   "license": "MIT",
   "scripts": {
