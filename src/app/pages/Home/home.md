@@ -103,4 +103,3 @@ If you have dynamic routes that you want to render, you need to give an array of
 
 You can do this dynamically by adding javascript to the `createPages.js` file.
 
-Try disabling javascript in your browser, everything should still mostly work!
