@@ -1,6 +1,6 @@
 # This site is fast
 
-It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a command.
+It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a build command.
 
 This *layer* is a npm package with goals similar to [Gatsbyjs](https://www.gatsbyjs.org/), but it is simpler, lighter, faster and is for building Hyperapp based websites.
 

@@ -18,9 +18,9 @@ export default (state) => (
     <h2>Simple counter component</h2>
     <p>It's code, view and logic was loaded asynchronously.</p>
     <p>Notice how it's still using the global app state.</p>
+    <p>Have a look at it's code <a href="https://github.com/loteoo/hyperapp-site-generator-demo/blob/master/src/app/pages/Counter.jsx" target="_blank">here</a>!</p>
     <h1>{state.counter}</h1>
-    <button onmousedown={Decrement}>-</button>
-    <button onmousedown={Increment}>+</button>
-    <p>Have a look at the code for this example <a href="https://github.com/loteoo/hyperapp-site-generator-demo/blob/master/src/app/pages/Counter.jsx" target="_blank">here</a>!</p>
+    <button onclick={Decrement}>-</button>
+    <button onclick={Increment}>+</button>
   </div>
 )

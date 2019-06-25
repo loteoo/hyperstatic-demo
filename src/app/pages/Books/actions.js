@@ -1,5 +1,6 @@
 
 import { Http } from '../../../utils'
+import { HandleError } from '../../actions'
 
 // Nested setter helper
 const Setter = (state, fragment) => ({
@@ -30,7 +31,8 @@ export const SearchBooks = (state, search) => {
       }),
       Http.get({
         url: 'https://www.googleapis.com/books/v1/volumes?q=' + search,
-        action: HandleResults
+        action: HandleResults,
+        error: HandleError
       })
     ]
   }

@@ -3,6 +3,7 @@ import { targetValue } from '../../../utils'
 import { css } from 'emotion'
 
 import { SetPokeSearch, ClearSearch, Init as PokedexInit } from './actions'
+import { Link } from 'hyperapp-site-generator'
 
 const pokedex = css`
   .search {
@@ -34,6 +35,11 @@ const card = css`
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    background-color: var(--background-color);
+  }
 `
 
 export default state => (
@@ -55,7 +61,7 @@ export default state => (
         ? state.pokemons
           .filter(pokemon => pokemon.name.toLowerCase().includes(state.pokeSearch.toLowerCase()))
           .map(pokemon => (
-            <div class={card}>
+            <Link to={`/pokedex/${pokemon.id}`} class={card}>
               <img src={pokemon.img} alt={pokemon.name} />
               <div class="poke-info">
                 <h3>{pokemon.name}</h3>
@@ -63,7 +69,7 @@ export default state => (
                 <p><small>Weight:</small> {pokemon.weight}</p>
                 <p><small>Types: {pokemon.type.map(type => <b>{type}, </b>)}</small></p>
               </div>
-            </div>
+            </Link>
           ))
         : 'Pokemons are loading!'
       }

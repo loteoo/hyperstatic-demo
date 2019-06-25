@@ -12,7 +12,7 @@
 
   --border-color: #e3e8ee;
 
-  --warning-color: yellow;
+  --warning-color: rgb(255, 208, 0);
   --danger-color: tomato;
   --success-color: #06d19c;
 }

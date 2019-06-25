@@ -1,5 +1,6 @@
 import description from './description.md'
 import { Http, preloadImage } from '../../../utils'
+import { HandleError } from '../../actions'
 
 export default (state) => (
   <div>
@@ -30,6 +31,6 @@ export const Init = (state) => [
   Http.get({
     url: 'https://api.nasa.gov/planetary/apod?api_key=8dUEsh65unCXLDx00RqiRtURx5DNLPSRCtbsJ8v2',
     action: HandlePicture,
-    error: console.error
+    error: HandleError
   })
 ]

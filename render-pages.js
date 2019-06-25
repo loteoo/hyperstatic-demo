@@ -15,7 +15,7 @@ const renderPages = require('hyperapp-site-generator/src/renderPages');
   // Get a list of pokemon pages
   const pokemonPages = await fetch('https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json')
     .then(response => response.json())
-    .then(data => data.pokemon.map(pokemon => `/pokemons/${pokemon.id}`))
+    .then(data => data.pokemon.map(pokemon => `/pokedex/${pokemon.id}`))
 
   // Add pokemons pages to urls
   pages = pages.concat(pokemonPages)

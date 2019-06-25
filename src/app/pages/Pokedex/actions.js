@@ -1,4 +1,5 @@
 import { Http, preloadImage } from '../../../utils'
+import { HandleError } from '../../actions'
 
 export const HandlePokedex = (state, response) => {
   const pokemons = response.pokemon.map(pokemon => ({
@@ -19,7 +20,8 @@ export const Init = (state) => [
   },
   Http.get({
     url: 'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json',
-    action: HandlePokedex
+    action: HandlePokedex,
+    error: HandleError
   })
 ]
 
