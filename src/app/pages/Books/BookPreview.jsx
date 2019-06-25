@@ -1,38 +1,10 @@
-import { css } from 'emotion'
 
 import { Link } from 'hyperapp-site-generator'
 
-const style = css`
-  display: block;
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  .top {
-    display: flex;
-    align-items: center;
-    .img {
-      max-width: 96px;
-      img {
-        width: 100%;
-      }
-    }
-  }
-  .info {
-    margin-left: 1rem;
-    .title {
-      margin: 0;
-    }
-    .author {
-      margin-top: 1rem;
-      p {
-        margin: 0;
-      }
-    }
-  }
-`
+import './book-preview.css'
 
 export default ({ book, state }) => (
-  <Link to={`/books/${book.id}`} state={state} class={style}>
+  <Link to={`/books/${book.id}`} state={state} class="book-preview">
     <div class="top">
       <div class="img">
         {book.volumeInfo.imageLinks && <img src={book.volumeInfo.imageLinks.smallThumbnail} alt={book.volumeInfo.title} />}

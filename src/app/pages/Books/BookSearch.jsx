@@ -1,33 +1,13 @@
-import { css } from 'emotion'
 import { targetValue } from '../../../utils'
 import { Init as BookInit, SearchBooks, ClearSearch } from './actions'
 import BookPreview from './BookPreview'
 import description from './description.md'
 
-const pageStyle = css`
-  input {
-    padding: 0.5rem;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
-    margin: 1rem 0;
-  }
-  .clear {
-    margin: 1rem;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  .search {
-    display: flex;
-    align-items: center;
-  }
-`
+import './book-search.css'
 
 export default (state) => {
   return (
-    <div class={pageStyle}>
+    <div class="book-search">
       <div innerHTML={description}></div>
       <label for="search">Search for a book</label>
       <div class="search">

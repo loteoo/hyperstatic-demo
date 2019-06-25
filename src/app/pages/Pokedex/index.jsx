@@ -1,49 +1,13 @@
 import description from './description.md'
 import { targetValue } from '../../../utils'
-import { css } from 'emotion'
 
 import { SetPokeSearch, ClearSearch, Init as PokedexInit } from './actions'
 import { Link } from 'hyperapp-site-generator'
 
-const pokedex = css`
-  .search {
-    display: flex;
-    align-items: center;
-  }
-  .clear {
-    margin: 1rem;
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  .poke-info {
-    padding: 0 1rem;
-    > * {
-      margin: 0;
-    }
-  }
-`
-
-const grid = css`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1rem;
-  margin: 1rem 0;
-`
-
-const card = css`
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    background-color: var(--background-color);
-  }
-`
+import './pokedex.css'
 
 export default state => (
-  <div class={pokedex}>
+  <div class="pokedex">
     <div innerHTML={description}></div>
     <label for="searchField">Search pokemons</label>
     <div class="search">
@@ -56,12 +20,12 @@ export default state => (
       />
       {state.pokeSearch && <a class="clear" onclick={ClearSearch}>Clear</a>}
     </div>
-    <div class={grid}>
+    <div class="grid">
       {state.pokemons
         ? state.pokemons
           .filter(pokemon => pokemon.name.toLowerCase().includes(state.pokeSearch.toLowerCase()))
           .map(pokemon => (
-            <Link to={`/pokedex/${pokemon.id}`} class={card}>
+            <Link to={`/pokedex/${pokemon.id}`} class="card">
               <img src={pokemon.img} alt={pokemon.name} />
               <div class="poke-info">
                 <h3>{pokemon.name}</h3>

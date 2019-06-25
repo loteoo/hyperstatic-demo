@@ -2,9 +2,11 @@
 import { LoadBookIfNeeded } from './actions'
 
 import BookPreview from './BookPreview'
+import { Link } from 'hyperapp-site-generator'
 
 export default (state) => (
   <div>
+    <Link to="/books">Back to list</Link>
     <h2>Book view</h2>
     {state.books && state.books.books[state.location.params.id]
       ? <BookPreview state={state} book={state.books.books[state.location.params.id]} />

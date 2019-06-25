@@ -90,3 +90,233 @@ code {
 img {
   max-width: 100%;
 }
+
+
+
+
+.sidebar {
+  width: 30%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-left: 3rem;
+}
+
+.menu {
+  align-self: flex-end;
+  position: sticky;
+  top: 0;
+  max-width: 20rem;
+  margin: 6rem 0;
+}
+.menu h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.menu nav {
+  margin-bottom: auto;
+}
+.menu nav ul {
+  padding-left: 0;
+}
+@media (max-width: 950px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .menu {
+    align-self: center;
+    margin: 0;
+  }
+}
+
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 850px) {
+  .header {
+    padding: 1rem;
+    display: block;
+  }
+}
+
+
+
+
+
+
+.fetching-mode-toggler {
+  margin: 1rem 0;
+  color: var(--text-color);
+  position: relative;
+  user-select: none;
+}
+
+.fetching-mode-toggler input[disabled] + label,
+.fetching-mode-toggler input[disabled]:hover + label {
+  color: var(--text-color);
+}
+
+.fetching-mode-toggler input[type="checkbox"] {
+  position: absolute;
+  top: auto;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+}
+
+.fetching-mode-toggler input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  padding: 0.5em 0.5em 0.5em 0;
+  padding-right: 4em;
+  color: var(--text-color);
+}
+
+.fetching-mode-toggler input[type="checkbox"]:focus + label,
+.fetching-mode-toggler input[type="checkbox"]:hover + label {
+  color: currentColor;
+}
+
+.fetching-mode-toggler input[type="checkbox"]:focus + label::before,
+.fetching-mode-toggler input[type="checkbox"]:hover + label::before {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25)
+}
+
+
+.fetching-mode-toggler input[type="checkbox"] + label::before,
+.fetching-mode-toggler input[type="checkbox"] + label::after {
+  content: "";
+  position: absolute;
+  height: 1.5em;
+  transition: all 200ms ease;
+}
+
+.fetching-mode-toggler input[type="checkbox"] + label::before {
+  right: 0;
+  width: 3em;
+  border: 0.15rem solid var(--border-color);
+  background: var(--border-color);
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.fetching-mode-toggler input[type="checkbox"] + label::after {
+  top: 0.5em;
+  right: 1.6em;
+  background-color: #fff;
+  background-position: center center;
+  border-radius: 50%;
+  width: 1.5em;
+  border: 0.15rem solid var(--border-color);
+  cursor: pointer;
+}
+
+.fetching-mode-toggler input[type="checkbox"]:checked + label::after {
+  right: 0;
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.fetching-mode-toggler input[type="checkbox"]:indeterminate + label::after {
+  right: 0.8em;
+}
+
+.fetching-mode-toggler input[type="checkbox"]:indeterminate + label::before {
+  background-color: #ddd;
+}
+
+.fetching-mode-toggler input[type="checkbox"]:checked + label::before {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.fetching-mode-toggler input[type="checkbox"][disabled] + label::before {
+  background-color: transparent;
+  border-color: #ddd;
+  cursor: auto;
+}
+.fetching-mode-toggler input[type="checkbox"][disabled]:not(:checked) + label::before {
+  background-color: #ddd;
+}
+
+.fetching-mode-toggler input[type="checkbox"][disabled] + label::after {
+  border-color: #ddd;
+  cursor: auto;
+}
+
+.fetching-mode-toggler input[disabled]:hover + label {
+  color: var(--text-color); /* case for CSS custom property if not supporting IE/Edge */
+}
+
+.fetching-mode-toggler input[type="checkbox"][disabled]:hover + label::before {
+  box-shadow: none;
+}
+
+.fetching-mode-toggler input[type="checkbox"][disabled]:hover + label::after {
+  background-image: none;
+}
+
+
+
+
+
+.link-with-status {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+.link-with-status:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+.link-with-status:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.link-with-status small {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+.link-with-status.invalid {
+  color: var(--danger-color);
+}
+.link-with-status.invalid svg {
+  stroke: currentColor;
+}
+.link-with-status.loading {
+  }
+.link-with-status.loading svg {
+  color: var(--warning-color);
+  stroke: currentColor;
+}
+.link-with-status.ready svg {
+  color: var(--success-color);
+  stroke: currentColor;
+}
+.link-with-status.active {
+  color: var(--accent-color);
+}
+.link-with-status.active svg {
+  color: var(--success-color);
+  stroke: currentColor;
+}
+.link-with-status span {
+  margin-left: auto;
+}
