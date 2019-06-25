@@ -2,7 +2,7 @@
 import { Link } from 'hyperapp-site-generator'
 import { Invalid, Loading, Check, Iddle } from './icons'
 
-export default ({ state, to, bundleSize, ...props }, children) => {
+export default ({ state, to, ...props }, children) => {
   const statusToSvg = {
     'invalid': Invalid,
     'iddle': Iddle,
@@ -35,7 +35,7 @@ export default ({ state, to, bundleSize, ...props }, children) => {
       {...props}
     >
       {children}
-      <small>{bundleSize}</small>
+      <small>{status}</small>
       {statusToSvg[status]()}
     </Link>
   )
