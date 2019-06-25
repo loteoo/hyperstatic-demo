@@ -9,7 +9,7 @@ Resulting bundles seem to be a tenth the size and few in numbers compared to Gat
 
 This project started out as a boilerplate but grew into a seperate package instead.
 
-This site is just a demo to get the word out potentially some help and assistance.
+This site is just a demo to get the word out and potentially some help and assistance.
 
 The project is very early, it does not even have a name yet. Hypersite? Instasite?  Hyperlight? Or why not *Bourango* which means nothing related at all but sounds cool. [Please help](https://github.com/loteoo/hyperapp-site-generator/issues/1).
 
