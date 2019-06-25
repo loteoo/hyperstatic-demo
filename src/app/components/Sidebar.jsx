@@ -11,7 +11,7 @@ export default ({ state }) => (
       <nav role="navigation">
         <LinkWithStatus state={state} bundleSize="7kb" to="/">Home</LinkWithStatus>
         <LinkWithStatus state={state} bundleSize="4kb" to="/project">The project</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="4kb" to="/starter">Starter template</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="4kb" to="/starter">Quick start </LinkWithStatus>
         <LinkWithStatus state={state} bundleSize="3kb" to="/counter">Counter</LinkWithStatus>
         <LinkWithStatus state={state} bundleSize="7kb" to="/pokedex">Pokedex</LinkWithStatus>
         <LinkWithStatus state={state} bundleSize="3kb" to="/apod">APOD</LinkWithStatus>
