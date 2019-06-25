@@ -1,6 +1,6 @@
 # This site is fast
 
-It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a configurable puppeteer script.
+It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a command.
 
 This *layer* is a npm package with goals similar to Gatsby.js, but it is simpler, lighter and is for building Hyperapp based websites.
 
@@ -8,7 +8,7 @@ It builds sites that are meant to be deployed on static hosting services like Ne
 
 Pages are bundled individually and loaded asynchronously at the right time using a very smart `<Link>` component. They all still share the same global state and run in the same Hyperapp instance.
 
-
+#### Here are the pieces: 
 
 
 ## Routing

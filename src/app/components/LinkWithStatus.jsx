@@ -1,7 +1,7 @@
 
 import { Link } from 'hyperapp-site-generator'
 import { css } from 'emotion'
-import { Invalid, Loading, Check } from './icons'
+import { Invalid, Loading, Check, Iddle } from './icons'
 
 const style = css`
   display: flex;
@@ -16,8 +16,9 @@ const style = css`
     color: var(--accent-color);
     text-decoration: underline;
   }
-  svg {
+  small {
     margin-left: auto;
+    margin-right: 0.5rem;
   }
   &.invalid {
     color: var(--danger-color);
@@ -52,7 +53,7 @@ const style = css`
 export default ({ state, to, bundleSize, ...props }, children) => {
   const statusToSvg = {
     'invalid': Invalid,
-    'iddle': () => <span>{bundleSize}</span>,
+    'iddle': Iddle,
     'loading': Loading,
     'ready': Check,
     'active': Check
@@ -84,6 +85,7 @@ export default ({ state, to, bundleSize, ...props }, children) => {
       {...props}
     >
       {children}
+      <small>{bundleSize}</small>
       {statusToSvg[status]()}
     </Link>
   )

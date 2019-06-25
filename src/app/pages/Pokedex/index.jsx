@@ -4,6 +4,24 @@ import { css } from 'emotion'
 
 import { SetPokeSearch, ClearSearch, Init as PokedexInit } from './actions'
 
+const pokedex = css`
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  .clear {
+    margin: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .poke-info {
+    padding: 0 1rem;
+    > * {
+      margin: 0;
+    }
+  }
+`
+
 const grid = css`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -19,10 +37,10 @@ const card = css`
 `
 
 export default state => (
-  <div>
+  <div class={pokedex}>
     <div innerHTML={description}></div>
     <label for="searchField">Search pokemons</label>
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div class="search">
       <input
         id="searchField"
         name="searchField"
@@ -30,7 +48,7 @@ export default state => (
         oninput={[SetPokeSearch, targetValue]}
         placeholder="Type here..."
       />
-      {state.pokeSearch && <a style={{ margin: '1rem', cursor: 'pointer', textDecoration: 'underline' }} onclick={ClearSearch}>Clear</a>}
+      {state.pokeSearch && <a class="clear" onclick={ClearSearch}>Clear</a>}
     </div>
     <div class={grid}>
       {state.pokemons
@@ -39,11 +57,11 @@ export default state => (
           .map(pokemon => (
             <div class={card}>
               <img src={pokemon.img} alt={pokemon.name} />
-              <div style={{ padding: '0 1rem' }}>
-                <h3 style={{ margin: '0' }}>{pokemon.name}</h3>
-                <p style={{ margin: '0' }}><small>Height:</small> {pokemon.height}</p>
-                <p style={{ margin: '0' }}><small>Weight:</small> {pokemon.weight}</p>
-                <p style={{ margin: '0' }}><small>Types: {pokemon.type.map(type => <b>{type}, </b>)}</small></p>
+              <div class="poke-info">
+                <h3>{pokemon.name}</h3>
+                <p><small>Height:</small> {pokemon.height}</p>
+                <p><small>Weight:</small> {pokemon.weight}</p>
+                <p><small>Types: {pokemon.type.map(type => <b>{type}, </b>)}</small></p>
               </div>
             </div>
           ))

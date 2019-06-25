@@ -12,6 +12,7 @@ const style = css`
   align-items: stretch;
   justify-content: space-between;
   overflow: hidden;
+  padding-left: 3rem;
   .menu {
     align-self: flex-end;
     position: sticky;
@@ -32,6 +33,17 @@ const style = css`
       color: inherit;
     }
   }
+  @media (max-width: 950px) {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    .menu {
+      align-self: center;
+      margin: 0;
+    }
+  }
+
 `
 
 export default ({ state }) => (
@@ -42,13 +54,13 @@ export default ({ state }) => (
         <p>Static site generator with a code splitting and navigation layer</p>
       </header>
       <nav role="navigation">
-        <LinkWithStatus state={state} bundleSize="6kb" to="/">Home</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/project">The project</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/starter">Starter template</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/counter">Counter</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/pokedex">Pokedex</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/apod">APOD</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="6kb" to="/books">Book search</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="7kb" to="/">Home</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="4kb" to="/project">The project</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="4kb" to="/starter">Starter template</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="3kb" to="/counter">Counter</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="7kb" to="/pokedex">Pokedex</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="3kb" to="/apod">APOD</LinkWithStatus>
+        <LinkWithStatus state={state} bundleSize="3kb" to="/books">Book search</LinkWithStatus>
       </nav>
     </div>
   </aside>
