@@ -1,6 +1,6 @@
 import { css } from 'emotion'
 import { targetValue } from '../../../utils'
-import { Init as BookInit, SearchBooks } from './actions'
+import { Init as BookInit, SearchBooks, ClearSearch } from './actions'
 import BookPreview from './BookPreview'
 import description from './description.md'
 
@@ -14,6 +14,15 @@ const pageStyle = css`
     grid-gap: 1rem;
     margin: 1rem 0;
   }
+  .clear {
+    margin: 1rem;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+  }
 `
 
 export default (state) => {
@@ -21,12 +30,15 @@ export default (state) => {
     <div class={pageStyle}>
       <div innerHTML={description}></div>
       <label for="search">Search for a book</label>
-      <input
-        id="search"
-        name="search"
-        value={state.books.search}
-        oninput={[SearchBooks, targetValue]}
-      />
+      <div class="search">
+        <input
+          id="search"
+          name="search"
+          value={state.books.search}
+          oninput={[SearchBooks, targetValue]}
+        />
+        {state.books.search && <a class="clear" onclick={ClearSearch}>Clear</a>}
+      </div>
       <div>
         {!state.books.results
           ? <h4>Search for any existing book!</h4>

@@ -62,6 +62,7 @@ Each link is aware of the page bundle it points to. Links have 4 statuses:
 
 For this demo, the statuses for each link is being shown with an icon, but usually, this would all be transparent to the user.
 
+You can [throttle your network](https://css-tricks.com/throttling-the-network/) to simulate a slow connection and reload the page. Try a 3G connection to see how the site reacts on slow networks. The pre-loading of sub pages should be less agressive (mouse hover only).
 
 
 

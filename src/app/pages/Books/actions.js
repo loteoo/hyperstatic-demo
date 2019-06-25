@@ -17,6 +17,10 @@ export const Init = (state) => Setter(state, {
   books: {}
 })
 
+export const ClearSearch = (state) => Setter(state, {
+  search: ''
+})
+
 export const SearchBooks = (state, search) => {
   if (search) {
     return [

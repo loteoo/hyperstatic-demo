@@ -25,7 +25,7 @@
   "dependencies": {
     "emotion": "^10.0.9",
     "hyperapp": "^2.0.0-beta.22",
-    "hyperapp-site-generator": "0.0.7",
+    "hyperapp-site-generator": "0.0.8",
     "node-fetch": "^2.6.0",
     "sanitize.css": "^10.0.0"
   },

@@ -5,7 +5,7 @@ This project basically trying to be a simpler, lighter, faster, Gatsbyjs alterna
 
 Main difference being that instead of using GraphQL and many more complexities to handle your data, you just put everything in the state using the hyperapp APIs and vanilla javascript.
 
-Resulting bundles seem to be a tenth the size few in numbers, compared to Gatsby builds. There is also nearly no inherent complexity related to pre-rendering thanks to simply using puppeteer.
+Resulting bundles seem to be a tenth the size and few in numbers compared to Gatsby builds. There is also nearly no inherent complexity related to pre-rendering thanks to simply using puppeteer.
 
 This project started out as a boilerplate but grew into a seperate package instead.
 
