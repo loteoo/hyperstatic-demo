@@ -1,7 +1,6 @@
 
-
 // Header
-export default state => (
+export default () => (
   <header>
     <nav>
       [github]
