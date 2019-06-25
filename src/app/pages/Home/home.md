@@ -2,7 +2,7 @@
 
 It was built using an experimental code splitting and navigation layer on top of **Hyperapp 2.0**, then pre-rendered using a command.
 
-This *layer* is a npm package with goals similar to Gatsby.js, but it is simpler, lighter and is for building Hyperapp based websites.
+This *layer* is a npm package with goals similar to [Gatsbyjs](https://www.gatsbyjs.org/), but it is simpler, lighter, faster and is for building Hyperapp based websites.
 
 It builds sites that are meant to be deployed on static hosting services like Netlify or Github Pages, which are often free, efficient, highly scalable and a lot more.
 
@@ -60,7 +60,7 @@ Each link is aware of the page bundle it points to. Links have 4 statuses:
 - **Active**:
   The route has been activated, the matching page is being viewed.
 
-For this technical demo, the statuses for each link is being shown with an icon, but usually, this would all be transparent to the user.
+For this demo, the statuses for each link is being shown with an icon, but usually, this would all be transparent to the user.
 
 
 
@@ -76,9 +76,9 @@ The bundles are loaded in the background when links pointing to them enter the v
 
 If they need dynamic runtime data, they get it from the state as usual.
 
-Pages can export a `Init` Hyperapp Action which gets triggered when the page's bundle has been downloaded. Not to confuse with an `OnNavigation` action which would be triggered when a page apprears on screen.
+Pages can export a `Init` Hyperapp Action which gets triggered when the page's bundle has been downloaded in the background.
 
-This `Init` Action can be used to setup the state in advance for the page or load data ahead of time via side-effects.
+This `Init` Action can be used to setup the state in advance for the page or load data ahead-of-time via side-effects.
 
 
 
