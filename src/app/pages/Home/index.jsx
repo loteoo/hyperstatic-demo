@@ -25,7 +25,7 @@ export default {
 }
 `}</code></pre>
     <p>The <code>import(...)</code> function indicates parcel to bundle each page in it's own bundle. These bundles will be loaded asynchronously during your application's runtime.</p><h2 id="navigation">Navigation</h2><p>The <code>&lt;Link&gt;</code> component works just like your typical Hyperapp / React / Gatsby <code>&lt;Link&gt;</code> component. Use use them like this:</p>
-    <p><code>{`&lt;Link to="/my-awesome-page&gt;My awesome page!&lt;/Link&gt;`}</code><br />or<br /><code>{`&lt;Link to="/products/some-slug/7839&gt;My awesome product by ID!&lt;/Link&gt;`}</code></p>
+    <p><code>{`<Link to="/my-awesome-page>My awesome page!</Link>`}</code><br />or<br /><code>{`<Link to="/products/some-slug/7839>My awesome product by ID!</Link>`}</code></p>
     <p><strong>Except they do more stuff under the hood.</strong></p>
     <p>Here is what is going on in the background.</p>
     <p>Each link is aware of the page bundle it points to. Links have 4 statuses: </p><ul>
