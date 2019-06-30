@@ -1,5 +1,10 @@
 import markdown from './project.md'
 
-export default () => (
-  <div innerHTML={markdown}></div>
-)
+console.log('onload:', markdown)
+
+export default () => {
+  console.log('onrender', markdown)
+  return (
+    <div innerHTML={markdown}></div>
+  )
+}
