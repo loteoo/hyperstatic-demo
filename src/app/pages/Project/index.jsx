@@ -1,10 +1,9 @@
 import markdown from './project.md'
 
-console.log('onload:', markdown)
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 
 export default () => {
-  console.log('onrender', markdown)
   return (
-    <div innerHTML={markdown}></div>
+    <div innerHTML={htmlToVdom(markdown)}></div>
   )
 }
