@@ -1,4 +1,4 @@
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import markdown from './project.md'
-import RawHtml from '../../components/RawHtml'
 
-export default () => <RawHtml>{markdown}</RawHtml>
+export default () => htmlToVdom(`<div>${markdown}</div>`)
