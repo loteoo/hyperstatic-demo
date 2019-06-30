@@ -5,7 +5,7 @@ import { HandleError } from '../../actions'
 
 export default (state) => (
   <div>
-    {htmlToVdom(`<div>${description}</div>`)}
+    {htmlToVdom(description)}
     {state.apod
       ? (
         <div class="viewer">

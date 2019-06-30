@@ -1,4 +1,4 @@
 import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import home from './home.md'
 
-export default () => htmlToVdom(`<div>${home}</div>`)
+export default () => htmlToVdom(home)
