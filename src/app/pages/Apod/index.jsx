@@ -1,10 +1,11 @@
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import description from './description.md'
 import { Http, preloadImage } from '../../../utils'
 import { HandleError } from '../../actions'
 
 export default (state) => (
   <div>
-    <div innerHTML={description}></div>
+    {htmlToVdom(`<div>${description}</div>`)}
     {state.apod
       ? (
         <div class="viewer">

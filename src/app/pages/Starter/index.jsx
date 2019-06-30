@@ -1,5 +1,4 @@
-import markdown from './starter.md'
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
+import starter from './starter.md'
 
-export default () => (
-  <div innerHTML={markdown}></div>
-)
+export default () => htmlToVdom(starter)

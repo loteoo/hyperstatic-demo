@@ -1,3 +1,4 @@
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import { targetValue } from '../../../utils'
 import { Init as BookInit, SearchBooks, ClearSearch } from './actions'
 import BookPreview from './BookPreview'
@@ -8,7 +9,7 @@ import './book-search.css'
 export default (state) => {
   return (
     <div class="book-search">
-      <div innerHTML={description}></div>
+      {htmlToVdom(description)}
       <label for="search">Search for a book</label>
       <div class="search">
         <input

@@ -1,3 +1,4 @@
+import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
 import description from './description.md'
 import { targetValue } from '../../../utils'
 
@@ -13,7 +14,7 @@ export default state => {
 
   return (
     <div class="pokedex">
-      <div innerHTML={description}></div>
+      {htmlToVdom(description)}
       <label for="searchField">Search pokemons</label>
       <div class="search">
         <input
