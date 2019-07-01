@@ -30,7 +30,7 @@ export default {
 }
 ```
 
-The `import(...)` function indicates parcel to bundle each page in it's own bundle. These bundles will be loaded asynchronously during your application's runtime.
+The `import(...)` function indicates parcel to bundle each page in its own bundle. These bundles will be loaded asynchronously during your application's runtime.
 
 
 
@@ -87,7 +87,7 @@ This `Init` Action can be used to setup the state in advance for the page or loa
 
 ## Pre-rendering 
 
-Pre-rendering the site is actually optionnal. The entire site will still work perfectly without it, but doing it still has some nice benefits. 
+Pre-rendering the site is actually optional. The entire site will still work perfectly without it, but doing it still has some nice benefits. 
 
 Even if Hyperapp's tiny size and quick rendering brings your TTI to a negligable number, there will always be users with slow network connections and low-end devices who will benefit from this. 
 
