@@ -10,13 +10,12 @@ export default ({ state }) => (
         <p>Static site generator with a code splitting and navigation layer</p>
       </header>
       <nav role="navigation">
-        <LinkWithStatus state={state} bundleSize="7kb" to="/">Home</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="4kb" to="/project">The project</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="4kb" to="/starter">Quick start </LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="3kb" to="/counter">Counter</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="7kb" to="/pokedex">Pokedex</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="3kb" to="/apod">APOD</LinkWithStatus>
-        <LinkWithStatus state={state} bundleSize="3kb" to="/books">Book search</LinkWithStatus>
+        <LinkWithStatus state={state} to="/">Home</LinkWithStatus>
+        <LinkWithStatus state={state} to="/project">The project</LinkWithStatus>
+        <LinkWithStatus state={state} to="/starter">Quick start </LinkWithStatus>
+        <LinkWithStatus state={state} to="/counter">Counter</LinkWithStatus>
+        <LinkWithStatus state={state} to="/pokedex">Pokedex</LinkWithStatus>
+        <LinkWithStatus state={state} to="/apod">APOD</LinkWithStatus>
       </nav>
       <footer>
         <a href="https://github.com/loteoo/hyperstatic" target="_blank" rel="noopener noreferrer">Project <Github /></a>

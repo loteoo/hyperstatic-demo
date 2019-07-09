@@ -5,7 +5,5 @@ export default {
   '/counter': import('./pages/Counter'),
   '/pokedex': import('./pages/Pokedex'),
   '/pokedex/:id': import('./pages/Pokedex/Pokemon'),
-  '/apod': import('./pages/Apod'),
-  '/books': import('./pages/Books/BookSearch'),
-  '/books/:id': import('./pages/Books/Book')
+  '/apod': import('./pages/Apod')
 }
