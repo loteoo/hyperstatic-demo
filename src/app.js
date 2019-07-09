@@ -1,5 +1,4 @@
-import { app } from 'hyperapp'
-import { LocationChanged, ParseUrl, getInitialState } from 'hyperapp-site-generator'
+import { hyperstatic } from 'hyperapp-site-generator'
 
 // Import best-practices defaults
 import 'sanitize.css'
@@ -15,12 +14,11 @@ import init from './app/init'
 import view from './app/view'
 
 // Initialize the app
-app({
-  init: getInitialState(routes, init),
+hyperstatic({
+  routes,
+  init,
   view,
-  subscriptions: () => [
-    LocationChanged({ action: ParseUrl })
-  ],
+  subscriptions: () => [],
   node: document.getElementById('app')
 })
 

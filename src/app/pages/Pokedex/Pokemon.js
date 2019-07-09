@@ -25,4 +25,9 @@ export default state => {
     : 'Pokemons are loading!'
 }
 
-export const Init = PokedexInit
+export const Init = (state) => {
+  if (!state.pokemons) {
+    return PokedexInit
+  }
+  return state
+}
