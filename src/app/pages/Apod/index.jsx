@@ -1,4 +1,4 @@
-import htmlToVdom from 'hyperstatic/src/htmlToVdom'
+import { htmlToVdom } from 'hyperstatic/src/htmlToVdom'
 import description from './description.md'
 import { Http, preloadImage } from '../../../utils'
 import { HandleError } from '../../actions'

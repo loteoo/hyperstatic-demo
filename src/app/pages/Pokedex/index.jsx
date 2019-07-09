@@ -1,4 +1,4 @@
-import htmlToVdom from 'hyperstatic/src/htmlToVdom'
+import { htmlToVdom } from 'hyperstatic/src/htmlToVdom'
 import description from './description.md'
 import { targetValue } from '../../../utils'
 
