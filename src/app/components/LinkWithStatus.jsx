@@ -1,5 +1,5 @@
 
-import { Link } from 'hyperapp-site-generator'
+import { Link } from 'hyperstatic'
 import { Invalid, Loading, Check, Iddle } from './icons'
 
 export default ({ state, to, ...props }, children) => {

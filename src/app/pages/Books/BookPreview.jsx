@@ -1,5 +1,5 @@
 
-import { Link } from 'hyperapp-site-generator'
+import { Link } from 'hyperstatic'
 
 import './book-preview.css'
 

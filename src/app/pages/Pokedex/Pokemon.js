@@ -1,5 +1,5 @@
 import { Init as PokedexInit } from './actions'
-import { Link } from 'hyperapp-site-generator'
+import { Link } from 'hyperstatic'
 
 export default state => {
   const pokemon = state.pokemons

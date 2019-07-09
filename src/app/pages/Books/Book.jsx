@@ -2,7 +2,7 @@
 import { LoadBookIfNeeded } from './actions'
 
 import BookPreview from './BookPreview'
-import { Link } from 'hyperapp-site-generator'
+import { Link } from 'hyperstatic'
 
 export default (state) => (
   <div>

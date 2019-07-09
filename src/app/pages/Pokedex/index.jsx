@@ -1,9 +1,9 @@
-import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
+import htmlToVdom from 'hyperstatic/src/htmlToVdom'
 import description from './description.md'
 import { targetValue } from '../../../utils'
 
 import { SetPokeSearch, ClearSearch, Init as PokedexInit } from './actions'
-import { Link } from 'hyperapp-site-generator'
+import { Link } from 'hyperstatic'
 
 import './pokedex.css'
 

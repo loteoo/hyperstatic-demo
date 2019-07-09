@@ -1,4 +1,4 @@
-import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
+import htmlToVdom from 'hyperstatic/src/htmlToVdom'
 import starter from './starter.md'
 
 export default () => htmlToVdom(starter)

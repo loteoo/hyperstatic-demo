@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "hyperapp-site-generator-demo",
+  "name": "hyperstatic-demo",
   "description": "Hyperapp site generator demo",
   "author": "Alexandre Lotte",
   "license": "MIT",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "hyperapp": "^2.0.0-beta.22",
-    "hyperapp-site-generator": "0.0.19",
+    "hyperstatic": "0.1.2",
     "node-fetch": "^2.6.0",
     "sanitize.css": "^10.0.0"
   },

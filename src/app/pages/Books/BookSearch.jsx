@@ -1,4 +1,4 @@
-import htmlToVdom from 'hyperapp-site-generator/src/htmlToVdom'
+import htmlToVdom from 'hyperstatic/src/htmlToVdom'
 import { targetValue } from '../../../utils'
 import { Init as BookInit, SearchBooks, ClearSearch } from './actions'
 import BookPreview from './BookPreview'

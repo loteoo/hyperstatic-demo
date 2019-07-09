@@ -1,5 +1,5 @@
 
-import { Router } from 'hyperapp-site-generator'
+import { Router } from 'hyperstatic'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 

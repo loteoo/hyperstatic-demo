@@ -1,4 +1,4 @@
-import { hyperstatic } from 'hyperapp-site-generator'
+import { hyperstatic } from 'hyperstatic'
 
 // Import best-practices defaults
 import 'sanitize.css'

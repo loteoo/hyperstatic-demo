@@ -15,4 +15,4 @@ The project is very early, it does not even have a name yet. Hypersite? Hypersta
 
 Let me know what you think on github or the hyperapp slack!
 
-Feel free to open up [issues](https://github.com/loteoo/hyperapp-site-generator/issues) if you see any possible improvements, ideas or pitfalls i'm not seeing. Pull requests will also be more than welcome!
+Feel free to open up [issues](https://github.com/loteoo/hyperstatic/issues) if you see any possible improvements, ideas or pitfalls i'm not seeing. Pull requests will also be more than welcome!

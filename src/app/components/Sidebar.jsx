@@ -19,8 +19,8 @@ export default ({ state }) => (
         <LinkWithStatus state={state} bundleSize="3kb" to="/books">Book search</LinkWithStatus>
       </nav>
       <footer>
-        <a href="https://github.com/loteoo/hyperapp-site-generator" target="_blank" rel="noopener noreferrer">Project <Github /></a>
-        <a href="https://github.com/loteoo/hyperapp-site-generator-demo" target="_blank" rel="noopener noreferrer">Demo site <Github /></a>
+        <a href="https://github.com/loteoo/hyperstatic" target="_blank" rel="noopener noreferrer">Project <Github /></a>
+        <a href="https://github.com/loteoo/hyperstatic-demo" target="_blank" rel="noopener noreferrer">Demo site <Github /></a>
       </footer>
     </div>
   </aside>
