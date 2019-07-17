@@ -5,8 +5,6 @@ import { targetValue } from '../../../utils'
 import { SetPokeSearch, ClearSearch, Init as PokedexInit } from './actions'
 import { Link } from 'hyperstatic'
 
-import './pokedex.css'
-
 export default state => {
   const results = state.pokemons
     ? state.pokemons.filter(pokemon => pokemon.name.toLowerCase().includes(state.pokeSearch.toLowerCase()))
