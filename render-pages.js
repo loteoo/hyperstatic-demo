@@ -9,7 +9,7 @@ const renderPages = require('hyperstatic/src/renderPages');
     '/starter',
     '/counter',
     '/pokedex',
-    '/books'
+    '/apod'
   ]
 
   // // Get a list of pokemon pages
