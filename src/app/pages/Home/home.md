@@ -39,9 +39,9 @@ The `import(...)` function indicates parcel to bundle each page in it's own bund
 
 The `<Link>` component works just like your typical Hyperapp / React / Gatsby `<Link>` component. Use use them like this:
 
-`<Link to="/my-awesome-page>My awesome page!</Link>`  
+`<Link to="/my-awesome-page">My awesome page!</Link>`  
 or  
-`<Link to="/products/some-slug/7839>My awesome product by ID!</Link>`  
+`<Link to="/products/some-slug/7839">My awesome product by ID!</Link>`  
 
 **Except they do more stuff under the hood.**
 
