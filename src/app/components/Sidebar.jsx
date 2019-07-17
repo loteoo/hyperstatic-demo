@@ -6,7 +6,7 @@ export default ({ state }) => (
   <aside class="sidebar">
     <div class="menu">
       <header role="banner">
-        <h1>Hyperapp site generator</h1>
+        <h1>Hyperstatic</h1>
         <p>Static site generator with a code splitting and navigation layer</p>
       </header>
       <nav role="navigation">
@@ -18,8 +18,8 @@ export default ({ state }) => (
         <LinkWithStatus state={state} to="/apod">APOD</LinkWithStatus>
       </nav>
       <footer>
-        <a href="https://github.com/loteoo/hyperstatic" target="_blank" rel="noopener noreferrer">Project <Github /></a>
-        <a href="https://github.com/loteoo/hyperstatic-demo" target="_blank" rel="noopener noreferrer">Demo site <Github /></a>
+        <a href="https://github.com/loteoo/hyperstatic" target="_blank" rel="noopener noreferrer">Hyperstatic Github <Github /></a>
+        <a href="https://github.com/loteoo/hyperstatic-demo" target="_blank" rel="noopener noreferrer">Demo site source code <Github /></a>
       </footer>
     </div>
   </aside>

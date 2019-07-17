@@ -15,7 +15,7 @@ To easiest way to get started is to use this [starter template](https://github.c
 
 
 
-3. Hook up the initial state and the router when instantiating your Hyperapp 2.0 app.   
+3. Replace hyperapp's `app` call with `hyperstatic`. Add the extra `routes` attribute that is needed.   
 [Example](https://github.com/loteoo/hyperstatic-starter/blob/master/src/app.js#L18)  
 
 
