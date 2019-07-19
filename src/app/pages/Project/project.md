@@ -11,8 +11,6 @@ This project started out as a boilerplate but grew into a seperate package inste
 
 This site is just a demo to get the word out and potentially some help and assistance.
 
-The project is very early, it does not even have a name yet. Hypersite? Hyperstatic? [Please help](https://www.strawpoll.me/18248738).
-
 Let me know what you think on github or the hyperapp slack!
 
 Feel free to open up [issues](https://github.com/loteoo/hyperstatic/issues) if you see any possible improvements, ideas or pitfalls i'm not seeing. Pull requests will also be more than welcome!
