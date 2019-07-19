@@ -1,5 +1,4 @@
 # This site is fast
-#### Very fast
 
 It was built using **Hyperstatic**, a code splitting and navigation layer on top of Hyperapp 2.0, then pre-rendered using a build command.
 

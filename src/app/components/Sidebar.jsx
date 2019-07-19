@@ -7,7 +7,7 @@ export default ({ state }) => (
     <div class="menu">
       <header role="banner">
         <h1>Hyperstatic</h1>
-        <p>Static site generator with a code splitting and navigation layer</p>
+        <p>Hyperapp static site generator</p>
       </header>
       <nav role="navigation">
         <LinkWithStatus state={state} to="/">Home</LinkWithStatus>
