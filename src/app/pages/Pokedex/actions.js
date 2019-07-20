@@ -1,4 +1,5 @@
-import { Http, preloadImage } from '../../../utils'
+import { StaticFetch } from 'hyperstatic'
+import { preloadImage } from '../../../utils'
 import { HandleError } from '../../actions'
 
 export const HandlePokedex = (state, response) => {
@@ -18,7 +19,7 @@ export const Init = (state) => [
     ...state,
     pokeSearch: ''
   },
-  Http.get({
+  StaticFetch({
     url: 'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json',
     action: HandlePokedex,
     error: HandleError
