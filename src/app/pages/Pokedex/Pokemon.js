@@ -27,7 +27,7 @@ export default state => {
 
 export const Init = (state) => {
   if (!state.pokemons) {
-    return PokedexInit
+    return PokedexInit(state)
   }
   return state
 }
