@@ -1,3 +1,0 @@
-
-# Redirect default Netlify subdomain to primary domain
-https://hyperstatic-demo.netlify.com/* https://hyperstatic.dev/:splat 301!
