@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "name": "hyperstatic-demo",
-  "description": "Hyperapp site generator demo",
+  "description": "Hyperapp static site generator",
   "author": "Alexandre Lotte",
   "license": "MIT",
   "scripts": {
