@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "hyperapp": "^2.0.1",
-    "hyperstatic": "0.2.5",
+    "hyperstatic": "^0.2.5",
     "node-fetch": "^2.6.0",
     "sanitize.css": "^10.0.0"
   },
