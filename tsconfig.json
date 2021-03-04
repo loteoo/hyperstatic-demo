@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "/utils/jsx",
+    "checkJs": true,
+    "noEmit": true,
+    "plugins": [
+      { // See https://github.com/mrmckeb/typescript-plugin-css-modules for more options
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "classnameTransform": "camelCaseOnly",
+          "customMatcher": "\\.(c|le|sa|sc)ss$"
+        }
+      }
+    ]
+  },
+  "include": [
+    "index.d.ts",
+    "src/**/*"
+  ],
+  "exclude": ["node_modules", "public", ".cache", "dist"]
+}
