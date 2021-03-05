@@ -1,16 +1,21 @@
-import Header from '/components/core/Header'
 import { Router } from 'hyperstatic'
+import Header from '/components/core/Header'
+import Sidebar from '/components/core/Sidebar'
 import Footer from '/components/core/Footer'
 
 import '/styles/base.css'
+import app from './app.css'
 
 const App = (state) => {
   return (
-    <main>
+    <div class={app.app}>
       <Header />
-      <Router />
+      <Sidebar menuOpened={state.menuOpened} />
+      <main class={app.mainContent}>
+        <Router />
+      </main>
       <Footer />
-    </main>
+    </div>
   )
 }
 

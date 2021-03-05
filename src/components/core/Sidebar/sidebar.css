@@ -1,0 +1,66 @@
+.sidebar {
+  margin: 3rem 0;
+}
+
+.inner {
+
+}
+
+
+
+
+
+.main-links {
+  margin: 2.5rem 0;
+}
+
+.main-links a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.125rem;
+  color: var(--title-color);
+  padding: 0.5rem 2rem;
+}
+
+.main-links a:not(.active):hover {
+  color: var(--accent-color);
+}
+
+.main-links a[aria-current] {
+  font-weight: 600;
+  border-right: 3px solid var(--accent-color);
+  background-color: var(--alt-background-color);
+}
+
+
+.sub-links {
+  margin: 4rem 2rem;
+}
+
+.sub-links a {
+  display: block;
+  text-decoration: none;
+  color: var(--subtle-color);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.sub-links a:hover {
+  color: var(--accent-color);
+}
+
+.sub-links > ul > li > a {
+  color: var(--title-color);
+  font-weight: 500;
+  /* font-style: italic; */
+  margin-bottom: 1rem;
+}
+
+.sub-links > ul > li > ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-color);
+}
+.sub-links > ul > li > ul > li > a {
+  font-size: 1rem;
+}
+

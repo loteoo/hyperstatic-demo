@@ -17,6 +17,7 @@
     "sanitize.css": "^12.0.1"
   },
   "devDependencies": {
+    "marked": "^2.0.1",
     "parcel": "^1.12.4",
     "postcss-modules": "^1.5.0",
     "postcss-nested": "^4.2.1",

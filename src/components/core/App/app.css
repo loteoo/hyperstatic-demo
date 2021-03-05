@@ -1,0 +1,43 @@
+.app {
+  display: grid;
+  grid-template-rows: 3rem 1fr auto;
+  grid-template-columns: 24rem 1fr;
+  grid-template-areas:
+      'header header'
+      'sidebar content'
+      'footer footer';
+
+  header {
+    grid-area: header;
+  }
+  aside {
+    grid-area: sidebar;
+  }
+  main {
+    grid-area: content;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+
+
+
+.main-content {
+  padding: 2rem 1rem;
+  position: relative;
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+
+
+
+@media (min-width: 992px) {
+
+  .main-content {
+    padding: 10rem 2rem;
+  }
+}

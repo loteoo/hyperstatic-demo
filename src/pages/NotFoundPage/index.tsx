@@ -3,7 +3,7 @@ import { Link } from 'hyperstatic'
 import utils from '/styles/utils.css'
 
 const NotFoundPage = () => (
-  <div class={utils.container}>
+  <div key="notfound" class={utils.container}>
     <h1>404.</h1>
     <p>Page not found.</p>
     <Link href="/">Go back to home page</Link>

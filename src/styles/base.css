@@ -9,16 +9,20 @@
 @import 'sanitize.css/typography.css';
 @import 'sanitize.css/reduce-motion.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
 /* === Defaults === */
 html {
   /* Global variables */
   --background-color: #ffffff;
   --alt-background-color: #f4f4f4;
-  --text-color: #121212;
+  --title-color: black;
+  --text-color: #2d3748;
   --accent-color: #0000ff;
   --divider-color: #eaeaea;
 
   /* Global styles */
+  font-family: 'Inter', sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   scroll-behavior: smooth;
@@ -42,62 +46,71 @@ html {
 }
 
 /* === Typography === */
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  margin: 1rem 0;
-  font-weight: bold;
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--title-color);
+  margin: 2.5rem 0 -0.5rem 0;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  /* font-family: system-ui, -apple-system, sans-serif; */
 }
 
-h1,
-.h1 {
+h1, .h1 {
+  margin-top: 3rem;
+  font-size: 3rem;
+}
+h2, .h2 {
+  margin-top: 3rem;
   font-size: 2rem;
 }
-h2,
-.h2 {
+h3, .h3 {
   font-size: 1.5rem;
 }
-h3,
-.h3 {
-  font-size: 1.17rem;
+h4, .h4 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
-h4,
-.h4 {
-  font-size: 1rem;
+h5, .h5 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
-h5,
-.h5 {
-  font-size: 0.83rem;
-}
-h6,
-.h6 {
-  font-size: 0.67rem;
+h6, .h6 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
 }
 
-p,
-.paragraph {
+p, .paragraph {
   margin: 1rem 0;
-  font-size: 1rem;
 }
 
-a,
-.link {
-  text-decoration: underline;
-  color: inherit;
+a, .link {
+  text-decoration: none;
+  color: var(--accent-color);
   &:hover {
   }
   &[aria-current] {
   }
 }
+
+h1 a, .h1 a,
+h2 a, .h2 a,
+h3 a, .h3 a,
+h4 a, .h4 a,
+h5 a, .h5 a,
+h6 a, .h6 a {
+  text-decoration: none;
+}
+
+b, strong {
+  font-weight: 600;
+  color: var(--title-color);
+}
+
+
 
 /* === Buttons === */
 button {
@@ -192,3 +205,13 @@ table {
     font-weight: 600;
   }
 }
+
+
+.markdown-content {
+  font-size: 1.125rem;
+}
+
+.markdown-content h1:first-child {
+  margin-top: 0;
+}
+

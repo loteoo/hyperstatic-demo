@@ -5,7 +5,7 @@
 /* Max-width containers */
 .container {
   width: 100%;
-  max-width: min(480px, 90vw);
+  max-width: min(680px, 90vw);
   margin: 0 auto;
 }
 

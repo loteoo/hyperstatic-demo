@@ -7,7 +7,8 @@ import App from '/components/core/App'
 
 const routes = {
   '/': import('./pages/HomePage'),
-  '/secondary': import('./pages/SecondaryPage'),
+  '/docs': import('./pages/DocumentationPage'),
+  '/quick-start': import('./pages/QuickStartPage'),
   '/counter': import('./pages/CounterPage'),
   '/characters': import('./pages/CharacterList'),
   '/characters/:id': import('./pages/CharacterDetails'),
