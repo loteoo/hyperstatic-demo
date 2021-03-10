@@ -1,14 +1,16 @@
 // Hyperstatic runtime
-import { hyperstatic } from 'hyperstatic'
+import { hyperstatic, onRouteChanged, Options } from 'hyperstatic'
 
 // Root view
 import Loader from '/components/core/Loader'
 import App from '/components/core/App'
+import { highLight } from '/effects'
 
 const routes = {
   '/': import('./pages/HomePage'),
-  '/docs': import('./pages/DocumentationPage'),
+  '/concepts': import('./pages/MainConceptsPage'),
   '/quick-start': import('./pages/QuickStartPage'),
+  '/reference': import('./pages/ReferencePage'),
   '/counter': import('./pages/CounterPage'),
   '/characters': import('./pages/CharacterList'),
   '/characters/:id': import('./pages/CharacterDetails'),
@@ -16,7 +18,7 @@ const routes = {
 }
 
 // All of these are optional
-const options = {
+const options: Options = {
   baseUrl: '/', // Path prefix
   loader: Loader, // Custom loading indicator in case of slow networks
   fastClicks: true
@@ -25,7 +27,10 @@ const options = {
 hyperstatic({
   routes,
   options,
-  init: {},
+  init: [{}, highLight()],
   view: App,
-  node: document.getElementById('app')
+  node: document.getElementById('app'),
+  subscriptions: () => [
+    onRouteChanged((state) => [state, highLight()])
+  ]
 })

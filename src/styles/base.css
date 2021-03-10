@@ -9,7 +9,9 @@
 @import 'sanitize.css/typography.css';
 @import 'sanitize.css/reduce-motion.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+/* Import custom code blocks CSS */
+@import './syntax-highlight.css';
 
 /* === Defaults === */
 html {
@@ -18,11 +20,17 @@ html {
   --alt-background-color: #f4f4f4;
   --title-color: black;
   --text-color: #2d3748;
-  --accent-color: #0000ff;
+  --accent-color: #1661EE;
+  --subtle-color: #495c77;
   --divider-color: #eaeaea;
+  --container-width: 1440px;
+  --sidebar-width: 16rem;
+  --content-width: 800px;
+  --header-height: 3.5rem;
+  --alt-background-color: #f6f8fa;
+  --border-color: #e2e8f0;
 
   /* Global styles */
-  font-family: 'Inter', sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   scroll-behavior: smooth;
@@ -208,10 +216,10 @@ table {
 
 
 .markdown-content {
-  font-size: 1.125rem;
+
 }
 
 .markdown-content h1:first-child {
-  margin-top: 0;
+
 }
 

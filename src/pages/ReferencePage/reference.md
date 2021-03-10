@@ -1,6 +1,6 @@
 # Reference
 
-Api reference
+Detailed documentation for each of hyperstatic's APIs
 
 ---
 

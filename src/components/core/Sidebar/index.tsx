@@ -1,5 +1,7 @@
-import { Link } from 'hyperstatic'
+import { Link, PathInfo, PathStatus } from 'hyperstatic'
 
+import Logo from '/components/core/Logo'
+import Footer from '/components/core/Footer'
 import { CloseMenu, OpenMenu, PreventDefault, ScrollTo } from '/actions'
 
 import utils from '/styles/utils.css'
@@ -17,36 +19,45 @@ const RoutedMenu = ({ route, ...props}, children) => window.location.pathname ==
   </div>
 )
 
+const statusEmojis: Record<PathStatus, string> = {
+  error: '⚠️',
+  iddle: '🕗',
+  loading: '⌛',
+  fetching: '📩',
+  ready: '✔️'
+}
 
 const Sidebar = ({ menuOpened }) => (
   <aside class={{
-    'sidebar': true,
+    [styles.sidebar]: true,
     opened: menuOpened
   }}>
-
-    <button class="menu-toggler" aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>
+    <Logo />
+    <button class={styles.menuToggler} aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>
       Menu
       {menuOpened
         ? <img src={require('./close.svg')} alt="Close menu" />
         : <img src={require('./menu.svg')} alt="Open menu" />
       }
     </button>
-
     <nav
       id="menu"
       class="menu"
     >
       <ul class={styles.mainLinks}>
-        <li><Link href="/">Introduction</Link></li>
-        <li><Link href="/docs">Documentation</Link></li>
-        <li><Link href="/quick-start">Quick start</Link></li>
-        <li><Link href="/contribute">Contribute</Link></li>
+        <li><Link href="/">{({ status }: PathInfo) => <span>Introduction <span>{statusEmojis[status]}</span></span>}</Link></li>
+        <li><Link href="/concepts">{({ status }: PathInfo) => <span>Main concepts <span>{statusEmojis[status]}</span></span>}</Link></li>
+        <li><Link href="/quick-start">{({ status }: PathInfo) => <span>Quick start <span>{statusEmojis[status]}</span></span>}</Link></li>
+        <li><Link href="/reference">{({ status }: PathInfo) => <span>Api reference <span>{statusEmojis[status]}</span></span>}</Link></li>
+        <li><Link href="/contribute">{({ status }: PathInfo) => <span>Contribute <span>{statusEmojis[status]}</span></span>}</Link></li>
       </ul>
       {/* <RoutedMenu route="/" innerHTML={homeLinks} />
       <RoutedMenu route="/reference" innerHTML={apiLinks} />
       <RoutedMenu route="/ecosystem" innerHTML={ecosystemLinks} />
       <RoutedMenu route="/tutorial" innerHTML={tutoLinks} /> */}
+
     </nav>
+    <Footer />
   </aside>
 )
 // const Sidebar = () => (

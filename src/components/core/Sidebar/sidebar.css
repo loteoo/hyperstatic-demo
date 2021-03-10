@@ -1,5 +1,14 @@
 .sidebar {
-  margin: 3rem 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0;
+  overflow: auto;
+  max-height: 100vh;
+  border-right: 1px solid var(--border-color);
+  width: 100%;
+  max-width: var(--sidebar-width);
 }
 
 .inner {
@@ -9,9 +18,36 @@
 
 
 
+.menu-toggler {
+  position: relative;
+  z-index: 50;
+  font-size: 0;
+  padding: 0;
+  border: none;
+}
+
+.menu-toggler img {
+  width: 2.5rem;
+}
+
+
+@media (min-width: 992px) {
+  .menu-toggler {
+    display: none;
+  }
+}
+
+
+
+
+
 
 .main-links {
   margin: 2.5rem 0;
+  list-style: none;
+  li::before {
+    content: none;
+  }
 }
 
 .main-links a {
@@ -19,7 +55,12 @@
   text-decoration: none;
   font-size: 1.125rem;
   color: var(--title-color);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .main-links a:not(.active):hover {
