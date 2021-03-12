@@ -27,7 +27,7 @@ export const init = (state) => [
 
 // View
 const CharacterList = (state) => (
-  <div class={utils.container}>
+  <div>
     <h2>Data fetching example</h2>
     <h4>Rick and Morty characters</h4>
     <div class={utils.grid}>

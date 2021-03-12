@@ -1,26 +1,3 @@
 .header {
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid var(--border-color);
-  background-color: white;
-  z-index: 10;
-}
-
-.inner {
-  display: flex;
-  align-items: center;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  height: calc(var(--header-height) - 1px);
   padding: 0 2rem;
-  a {
-    font-size: 0.875rem;
-    color: var(--subtle-color);
-    &:first-child {
-      margin-right: auto;
-    }
-    &:not(:first-child) {
-      margin-left: 1rem;
-    }
-  }
 }

@@ -2,13 +2,6 @@
   Shared utility classes
 \*------------------------------------*/
 
-/* Max-width containers */
-.container {
-  width: 100%;
-  max-width: min(680px, 90vw);
-  margin: 0 auto;
-}
-
 /* Responsive Card grid */
 .grid {
   display: grid;

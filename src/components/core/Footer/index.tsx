@@ -3,13 +3,6 @@ import styles from './footer.css'
 const Footer = () => (
   <footer class={styles.footer}>
     <a
-      href="https://github.com/loteoo/hyperstatic-demo"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      [source code]
-    </a>
-    <a
       href="https://github.com/loteoo/hyperstatic"
       target="_blank"
       rel="noopener noreferrer"
@@ -22,6 +15,13 @@ const Footer = () => (
       rel="noopener noreferrer"
     >
       [hyperapp]
+    </a>
+    <a
+      href="https://github.com/loteoo/hyperstatic-demo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      [source]
     </a>
   </footer>
 )

@@ -1,10 +1,22 @@
 # Guide
 
 
-## Pages
+## Creating pages
 
 ### router
 ### init
-### data fetching
 
-### prerendering
+
+## Fetching
+
+## Prerendering your site
+
+
+## Deploying your site
+
+#### setup the build command
+#### Maybe need baseURL
+
+Github pages
+Netlify
+zeit

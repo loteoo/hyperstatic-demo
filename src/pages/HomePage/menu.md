@@ -1,0 +1,3 @@
+- [Getting started](#getting-started)
+  - [Starter template](#🚀-starter-template)
+  - [Installation in an existing hyperapp project](#installation-in-an-existing-hyperapp-project)

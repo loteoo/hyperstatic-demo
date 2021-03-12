@@ -14,7 +14,6 @@ const App = (state) => {
           <Router />
         </main>
       </div>
-      <Footer />
     </div>
   )
 }

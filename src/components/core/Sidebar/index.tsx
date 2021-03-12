@@ -1,22 +1,35 @@
 import { Link, PathInfo, PathStatus } from 'hyperstatic'
-
-import Logo from '/components/core/Logo'
+import Header from '/components/core/Header'
 import Footer from '/components/core/Footer'
 import { CloseMenu, OpenMenu, PreventDefault, ScrollTo } from '/actions'
-
-import utils from '/styles/utils.css'
 import styles from './sidebar.css'
 
+import homeMenu from '/pages/HomePage/menu.md'
+import referenceMenu from '/pages/ReferencePage/menu.md'
 
 const RoutedMenu = ({ route, ...props}, children) => window.location.pathname === route && (
   <div
-    class="sub-links"
+    class={styles.subLinks}
     onmousedown={[ScrollTo, ev => ev.target.href ? ev.target.href.split('#')[1] : null]}
     onclick={PreventDefault}
     {...props}
   >
     {children}
   </div>
+)
+
+const MainLinkItem = ({ href, label }) => (
+  <Link href={href}>
+    {({ status, active }: PathInfo) => (
+      <span>
+        {label}
+        <span>
+          <small>{active ? 'active' : status}</small>
+          {statusEmojis[status]}
+        </span>
+      </span>
+    )}
+  </Link>
 )
 
 const statusEmojis: Record<PathStatus, string> = {
@@ -32,7 +45,7 @@ const Sidebar = ({ menuOpened }) => (
     [styles.sidebar]: true,
     opened: menuOpened
   }}>
-    <Logo />
+    <Header />
     <button class={styles.menuToggler} aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>
       Menu
       {menuOpened
@@ -45,14 +58,15 @@ const Sidebar = ({ menuOpened }) => (
       class="menu"
     >
       <ul class={styles.mainLinks}>
-        <li><Link href="/">{({ status }: PathInfo) => <span>Introduction <span>{statusEmojis[status]}</span></span>}</Link></li>
-        <li><Link href="/concepts">{({ status }: PathInfo) => <span>Main concepts <span>{statusEmojis[status]}</span></span>}</Link></li>
-        <li><Link href="/quick-start">{({ status }: PathInfo) => <span>Quick start <span>{statusEmojis[status]}</span></span>}</Link></li>
-        <li><Link href="/reference">{({ status }: PathInfo) => <span>Api reference <span>{statusEmojis[status]}</span></span>}</Link></li>
-        <li><Link href="/contribute">{({ status }: PathInfo) => <span>Contribute <span>{statusEmojis[status]}</span></span>}</Link></li>
+        <li><MainLinkItem href="/" label="Introduction" /></li>
+        <li><MainLinkItem href="/concepts" label="Guide" /></li>
+        <li><MainLinkItem href="/reference" label="Api reference" /></li>
+        <li><MainLinkItem href="/contribute" label="Contribute" /></li>
       </ul>
-      {/* <RoutedMenu route="/" innerHTML={homeLinks} />
-      <RoutedMenu route="/reference" innerHTML={apiLinks} />
+      <RoutedMenu route="/" innerHTML={homeMenu} />
+      <RoutedMenu route="/reference" innerHTML={referenceMenu} />
+
+      {/*
       <RoutedMenu route="/ecosystem" innerHTML={ecosystemLinks} />
       <RoutedMenu route="/tutorial" innerHTML={tutoLinks} /> */}
 
@@ -60,14 +74,5 @@ const Sidebar = ({ menuOpened }) => (
     <Footer />
   </aside>
 )
-// const Sidebar = () => (
-//   <aside class={styles.sidebar}>
-//     <div class={[utils.container, styles.inner]}>
-//       <Link href="/">Home</Link>
-//       <Link href="/docs">Documentation</Link>
-//       <Link href="/ref">Api reference</Link>
-//     </div>
-//   </aside>
-// )
 
 export default Sidebar

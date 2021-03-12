@@ -9,7 +9,6 @@ import { highLight } from '/effects'
 const routes = {
   '/': import('./pages/HomePage'),
   '/concepts': import('./pages/MainConceptsPage'),
-  '/quick-start': import('./pages/QuickStartPage'),
   '/reference': import('./pages/ReferencePage'),
   '/counter': import('./pages/CounterPage'),
   '/characters': import('./pages/CharacterList'),
@@ -21,7 +20,8 @@ const routes = {
 const options: Options = {
   baseUrl: '/', // Path prefix
   loader: Loader, // Custom loading indicator in case of slow networks
-  fastClicks: true
+  fastClicks: true,
+  eagerLoad: true
 }
 
 hyperstatic({

@@ -1,7 +1,5 @@
 import Button from '/components/ui/Button'
 
-import utils from '/styles/utils.css'
-
 // Initial state
 export const init = (state) => ({ ...state, counter: 0 })
 
@@ -11,7 +9,7 @@ const Decrement = (state) => ({ ...state, counter: state.counter - 1 })
 
 // View
 const CounterPage = (state) => (
-  <div class={utils.container}>
+  <div>
     <h2>Counter</h2>
     <h1>{state.counter}</h1>
     <Button onclick={Decrement}>-</Button>

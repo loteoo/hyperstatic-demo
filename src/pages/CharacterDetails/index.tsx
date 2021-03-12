@@ -1,4 +1,3 @@
-import utils from '/styles/utils.css'
 import { loadStatic } from 'hyperstatic'
 
 import styles from './character-details.css'
@@ -36,14 +35,12 @@ const CharacterDetails = (state) => {
 
   if (!character) {
     return (
-      <div class={utils.container}>
-        <h2>Loading...</h2>
-      </div>
+      <h2>Loading...</h2>
     )
   }
 
   return (
-    <div class={utils.container}>
+    <div>
       <h2>{character.name}</h2>
       <div class={styles.container}>
         <img

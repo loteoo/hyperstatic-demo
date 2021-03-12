@@ -1,31 +1,18 @@
-import { Link } from 'hyperstatic'
-import content from './home.md'
+import intro from './intro.md'
+import manualInstall from './manual-install.md'
 
 import base from '/styles/base.css'
-import utils from '/styles/utils.css'
 import home from './home.css'
+import Button from '/components/ui/Button'
+import { Link } from 'hyperstatic'
 
 const HomePage = () => (
   <div key="home">
-
     <div class={home.hero}>
       <h1>
-        Hyperstatic
-        <sup>
-          <a href="https://github.com/jorgebucaran/hyperapp" target="_blank" rel="noopener noreferrer">
-            2.0.4
-          </a>
-        </sup>
+        hyperapp based <i>fast site</i> generator
       </h1>
-      <h2>
-        <span>The </span>
-        <a href="https://github.com/jorgebucaran/hyperapp" target="_blank">
-          hyperapp
-        </a>
-        <span> static site generator</span>
-      </h2>
     </div>
-
     <div class={home.featuresGrid}>
       <div class={home.feature}>
         <h4>✔️ Routing</h4>
@@ -37,14 +24,28 @@ const HomePage = () => (
       </div>
       <div class={home.feature}>
         <h4>⚡ Prefetching</h4>
-        <p>No waiting after slow APIs</p>
+        <p>no waiting after slow APIs</p>
       </div>
       <div class={home.feature}>
         <h4>✂️ Code splitting</h4>
-        <p>Fast first page loads</p>
+        <p>light bundles on a per page basis</p>
       </div>
     </div>
-    <div class={base.markdownContent} innerHTML={content} />
+    <div class={home.actions}>
+      <Button href="/quick-start">Get started</Button>
+      <Link href="/concepts">Read the docs</Link>
+    </div>
+    <hr/>
+    <div class={base.markdownContent}>
+      <div innerHTML={intro} />
+      <Button green href="https://github.com/loteoo/hyperstatic-starter/generate" target="_blank">
+        Use the template
+      </Button>
+      <hr />
+      <div innerHTML={manualInstall} />
+      <hr />
+      <p>Hopefully that was enough to get you started! Checkout the <Link href="/api-reference">reference</Link> for more info!</p>
+    </div>
   </div>
 )
 

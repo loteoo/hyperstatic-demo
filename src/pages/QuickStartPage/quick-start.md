@@ -1,9 +1,6 @@
-# Getting started
 
 
-## Starter template 🚀
 
-To easiest way to get started is to use this [starter template](https://github.com/loteoo/hyperstatic-starter).
 
 ---  
 
