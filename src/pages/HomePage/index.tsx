@@ -44,7 +44,7 @@ const HomePage = () => (
       <hr />
       <div innerHTML={manualInstall} />
       <hr />
-      <p>Hopefully that was enough to get you started! Checkout the <Link href="/api-reference">reference</Link> for more info!</p>
+      <p>Hopefully that was enough to get you started! Checkout the <Link href="/guide">guide</Link> for more information, or the <Link href="/reference">Api reference</Link> for all the information!</p>
     </div>
   </div>
 )

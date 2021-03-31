@@ -6,6 +6,7 @@ import '/styles/base.css'
 import app from './app.css'
 
 const App = (state) => {
+  console.log(state)
   return (
     <div class={app.app}>
       <div class={app.cols}>
