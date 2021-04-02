@@ -9,6 +9,8 @@
 
 ## Fetching
 
+### Headless CMS
+
 ## Prerendering your site
 
 

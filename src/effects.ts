@@ -18,7 +18,6 @@ const scrollFx = (_dispatch, { id }: ScrollProps) => {
 export const scrollTo = (props: ScrollProps) => [scrollFx, props]
 
 const highLightFx = () => {
-  console.log('highLightFx')
   setTimeout(() => {
     requestAnimationFrame(() => {
       Prism.highlightAllUnder(document.getElementById('app'))
@@ -27,3 +26,10 @@ const highLightFx = () => {
 }
 
 export const highLight = () => [highLightFx]
+
+const preloadImageFx = (_dispatch, src) => {
+  const img = new Image()
+  img.src = src
+}
+
+export const preloadImage = (src) => [preloadImageFx, src]

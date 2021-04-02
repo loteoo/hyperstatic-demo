@@ -1,11 +1,16 @@
+
+.listContainer {
+  max-width: 32rem;
+}
+
 .card {
   display: block;
   padding: 1rem;
   border: 1px solid var(--divider-color);
   border-radius: 0.25rem;
-  text-decoration: none;
   &:hover {
     background-color: var(--alt-background-color);
+    text-decoration: none;
   }
 }
 

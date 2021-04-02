@@ -8,8 +8,8 @@ import { highLight } from '/effects'
 
 const routes = {
   '/': import('./pages/HomePage'),
-  '/concepts': import('./pages/MainConceptsPage'),
-  '/reference': import('./pages/ReferencePage'),
+  // '/concepts': import('./pages/MainConceptsPage'),
+  '/docs': import('./pages/DocsPage'),
   '/counter': import('./pages/CounterPage'),
   '/characters': import('./pages/CharacterList'),
   '/characters/:id': import('./pages/CharacterDetails'),
@@ -20,8 +20,7 @@ const routes = {
 const options: Options = {
   baseUrl: '/', // Path prefix
   loader: Loader, // Custom loading indicator in case of slow networks
-  fastClicks: true,
-  eagerLoad: true
+  // eagerLoad: false
 }
 
 hyperstatic({
@@ -30,7 +29,10 @@ hyperstatic({
   init: [{}, highLight()],
   view: App,
   node: document.getElementById('app'),
-  subscriptions: () => [
-    onRouteChanged((state) => [state, highLight()])
-  ]
+  subscriptions: (state) => {
+    console.log('State: ', state)
+    return [
+      onRouteChanged((state) => [state, highLight()])
+    ]
+  }
 })

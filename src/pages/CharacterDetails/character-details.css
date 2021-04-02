@@ -1,7 +1,15 @@
 .container {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
+  align-items: center;
+  img {
+    border-radius: 0.25rem;
+    background-color: var(--alt-background-color);
+  }
+  h2 {
+    margin: 0 0 0.5rem 0;
+  }
 }
 .infoGrid {
   display: grid;

@@ -36,6 +36,7 @@ html {
   color: var(--text-color);
   background-color: var(--background-color);
   scroll-behavior: smooth;
+  cursor: initial;
 
   /* Collapse margins */
   margin-top: -1rem;
@@ -63,7 +64,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: var(--title-color);
-  margin: 2rem 0 -0.5rem 0;
+  margin: 2rem 0 0 0;
   font-weight: 700;
   letter-spacing: -0.025em;
   /* font-family: system-ui, -apple-system, sans-serif; */
@@ -174,7 +175,7 @@ hr {
 
 blockquote {
   margin: 1em 0;
-  padding: 0.5em 2em;
+  padding: 0.5rem 1.5rem;
   border-left: 0.25rem solid var(--text-color);
   > *:first-child {
     margin-top: 0;
@@ -218,9 +219,34 @@ table {
 
 .markdown-content {
   font-size: 1.125rem;
+  h1:first-child {
+    margin-top: 0;
+  }
+
+  /* Copy to clipboard icons */
+  h1, h2, h3, h4, h5, h6 {
+    &[id] {
+      position: relative;
+      &::before {
+        content: "";
+        cursor: pointer;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+        background-position: center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        transform: translateY(-40%);
+        opacity: 0;
+      }
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.markdown-content h1:first-child {
-  margin-top: 0;
-}
 

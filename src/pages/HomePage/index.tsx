@@ -1,5 +1,5 @@
 import intro from './intro.md'
-import manualInstall from './manual-install.md'
+import bottom from './bottom.md'
 
 import base from '/styles/base.css'
 import home from './home.css'
@@ -8,7 +8,7 @@ import { Link } from 'hyperstatic'
 
 const HomePage = () => (
   <div key="home">
-    <div class={home.hero}>
+    <div class={home.hero} id="top">
       <h1>
         hyperapp based <i>fast site</i> generator
       </h1>
@@ -32,8 +32,8 @@ const HomePage = () => (
       </div>
     </div>
     <div class={home.actions}>
-      <Button href="/quick-start">Get started</Button>
-      <Link href="/concepts">Read the docs</Link>
+      <Button href="#getting-started">Get started</Button>
+      <Link href="/docs">Read the docs</Link>
     </div>
     <hr/>
     <div class={base.markdownContent}>
@@ -42,9 +42,7 @@ const HomePage = () => (
         Use the template
       </Button>
       <hr />
-      <div innerHTML={manualInstall} />
-      <hr />
-      <p>Hopefully that was enough to get you started! Checkout the <Link href="/guide">guide</Link> for more information, or the <Link href="/reference">Api reference</Link> for all the information!</p>
+      <div innerHTML={bottom} />
     </div>
   </div>
 )

@@ -1,6 +1,7 @@
 import { loadStatic } from 'hyperstatic'
 
 import styles from './character-details.css'
+import { preloadImage } from '/effects'
 
 const HandleCharacter = (state, data) => ({
   ...state,
@@ -11,23 +12,27 @@ const HandleCharacter = (state, data) => ({
 })
 
 // Fetch characters details
-export const init = (state, location) => [
-  {
-    ...state,
-    characters: state.characters ?? {}
-  },
-  loadStatic({
-    loader: async () => {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/${location.params.id}`
-      )
-      const data = await response.json()
-      return data
+export const init = (state, location) => {
+  const characterFromList = state.characterlist.find(character => character.id === parseInt(location.params.id));
+  return [
+    {
+      ...state,
+      characters: state.characters ?? {}
     },
-    action: HandleCharacter,
-    error: (state) => state
-  })
-]
+    loadStatic({
+      loader: async () => {
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/character/${location.params.id}`
+        )
+        const { episode, ...data } = await response.json()
+        return data
+      },
+      action: HandleCharacter,
+      error: (state) => state
+    }),
+    characterFromList && preloadImage(characterFromList.image)
+  ]
+}
 
 // View
 const CharacterDetails = (state) => {
@@ -41,15 +46,15 @@ const CharacterDetails = (state) => {
 
   return (
     <div>
-      <h2>{character.name}</h2>
       <div class={styles.container}>
         <img
-          width="200"
-          height="200"
+          width="300"
+          height="300"
           src={character.image}
           alt={character.name}
         />
         <div>
+          <h2>{character.name}</h2>
           <div class={styles.infoGrid}>
             <span>Status:</span>
             <span>{character.status}</span>
@@ -64,6 +69,12 @@ const CharacterDetails = (state) => {
           </div>
         </div>
       </div>
+      <h4>Data: </h4>
+      <pre>
+        <code>
+          {JSON.stringify(character, null, 2)}
+        </code>
+      </pre>
     </div>
   )
 }

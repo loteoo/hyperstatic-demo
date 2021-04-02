@@ -1,22 +1,31 @@
-import { Link, PathInfo, PathStatus } from 'hyperstatic'
+import { Link, PathInfo } from 'hyperstatic'
 import Header from '/components/core/Header'
 import Footer from '/components/core/Footer'
 import { CloseMenu, OpenMenu, PreventDefault, ScrollTo } from '/actions'
 import styles from './sidebar.css'
 
 import homeMenu from '/pages/HomePage/menu.md'
-import referenceMenu from '/pages/ReferencePage/menu.md'
+import docsMenu from '/pages/DocsPage/menu.md'
+import statusEmojis from '/utils/statusEmojis'
 
-const RoutedMenu = ({ route, ...props}, children) => window.location.pathname === route && (
-  <div
-    class={styles.subLinks}
-    onmousedown={[ScrollTo, ev => ev.target.href ? ev.target.href.split('#')[1] : null]}
-    onclick={PreventDefault}
-    {...props}
-  >
-    {children}
-  </div>
-)
+const RoutedMenu = ({ route, ...props}, children) => {
+
+  if (window.location.pathname !== route) {
+    return false;
+  }
+
+
+  return (
+    <div
+      class={styles.subLinks}
+      // onmousedown={[ScrollTo, ev => ev.target.href ? ev.target.href.split('#')[1] : null]}
+      // onclick={PreventDefault}
+      {...props}
+    >
+      {children}
+    </div>
+  )
+}
 
 const MainLinkItem = ({ href, label }) => (
   <Link href={href}>
@@ -31,14 +40,6 @@ const MainLinkItem = ({ href, label }) => (
     )}
   </Link>
 )
-
-const statusEmojis: Record<PathStatus, string> = {
-  error: '⚠️',
-  iddle: '🕗',
-  loading: '⌛',
-  fetching: '📩',
-  ready: '✔️'
-}
 
 const Sidebar = ({ menuOpened }) => (
   <aside class={{
@@ -59,12 +60,14 @@ const Sidebar = ({ menuOpened }) => (
     >
       <ul class={styles.mainLinks}>
         <li><MainLinkItem href="/" label="Introduction" /></li>
-        <li><MainLinkItem href="/concepts" label="Guide" /></li>
-        <li><MainLinkItem href="/reference" label="Api reference" /></li>
-        <li><MainLinkItem href="/contribute" label="Contribute" /></li>
+        {/* <li><MainLinkItem href="/concepts" label="Guide" /></li> */}
+        <li><MainLinkItem href="/docs" label="Documentation" /></li>
+        {/* <li><MainLinkItem href="/contribute" label="Contribute" /></li> */}
+        <li><MainLinkItem href="/counter" label="Counter" /></li>
+        <li><MainLinkItem href="/characters" label="Fetching example" /></li>
       </ul>
       <RoutedMenu route="/" innerHTML={homeMenu} />
-      <RoutedMenu route="/reference" innerHTML={referenceMenu} />
+      <RoutedMenu route="/docs" innerHTML={docsMenu} />
 
       {/*
       <RoutedMenu route="/ecosystem" innerHTML={ecosystemLinks} />

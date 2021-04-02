@@ -21,7 +21,7 @@ const Footer = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      [source]
+      [site source]
     </a>
   </footer>
 )

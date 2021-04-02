@@ -1,6 +1,6 @@
-# Reference
+# Documentation
 
-Detailed documentation for hyperstatic's APIs
+Detailed documentation / API reference for hyperstatic
 
 ---
 
@@ -110,7 +110,7 @@ A page is simply a javascript module (javascript file) that exports a standard h
 
 These view functions will receive the full state of the hyperapp app as the argument.
 
-Pages can also have an [init](#init) hyperapp action to prepare the state and load data.
+Pages can also have export an [init](#init) hyperapp action to prepare the state and load data.
 
 #### init action
 
@@ -282,13 +282,13 @@ const SomeComponent = () => (
 - **status** - Status value of the targeted page. See [status](#status)
 - **active** - Boolean value for if the page is the currently viewed page
 
-
+<!-- 
 #### Link props
 The Link component also has some configurable props (other than `href`)
 
 - **eagerLoad prop** - Enable or disable eager loading for this specific link
 - **fastClick prop** - Enable or disable fast clicks for this specific link
-
+ -->
 
 ## navigate effect
 
@@ -335,7 +335,7 @@ Hyperstatic adds a few things to your state out-of-the-box. These pieces of info
 #### location object
 The location object is a small user friendly object with details about the current route.
 
-Example location object for this imaginary path `/pizzas/86?foo=bar&bizz=baz` on a route like this: `/pizzas/:pizzaId`
+Example location object for a `/pizzas/:pizzaId` route with a `/pizzas/86?foo=bar&bizz=baz` path: 
 
 ```json
 // App state
@@ -357,7 +357,7 @@ Example location object for this imaginary path `/pizzas/86?foo=bar&bizz=baz` on
 #### paths object
 There is also a `paths` object wich is a record of all paths that have been loaded and their respective [status](#status). The keys are the paths and the values are the status.
 
-#### Path status enum
+#### status enum
 
 The status enum can be one of the following values:
 

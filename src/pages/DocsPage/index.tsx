@@ -1,5 +1,5 @@
 import { Link } from 'hyperstatic'
-import content from './reference.md'
+import content from './content.md'
 
 import base from '/styles/base.css'
 

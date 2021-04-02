@@ -1,7 +1,7 @@
 import { Link } from 'hyperstatic'
 import styles from './button.css'
 
-const Button = ({ type = 'button', href, green = false, ...rest }, children) => {
+const Button = ({ type = 'button', href = '', green = false, ...rest }, children) => {
   const props = {
     class: {
       [styles.button]: true,

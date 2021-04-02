@@ -11,7 +11,7 @@
 }
 
 /* Bring attention to some content */
-.callout {
+.callout, [class="callout"] {
   padding: 1em;
   margin: 1rem 0;
   background-color: var(--alt-background-color);
