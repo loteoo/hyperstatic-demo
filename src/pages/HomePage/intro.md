@@ -8,10 +8,6 @@ Sites built with hyperstatic are meant to be deployed on static hosting services
 
 ---
 
-## About this site
-This is site acts as documentation for hyperstatic but also as a demo of it's capabilities. Each page is prerendered so it should work even with JS disabled. Try it out!
-
-Feel free to play around with network throtling to better see how the runtime reacts.
 
 ## Getting started
 

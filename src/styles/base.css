@@ -25,7 +25,7 @@ html {
   --divider-color: #eaeaea;
   --container-width: 1440px;
   --sidebar-width: 18rem;
-  --content-width: 740px;
+  --content-width: 860px;
   --header-height: 3.5rem;
   --alt-background-color: #f6f8fa;
   --border-color: #e2e8f0;
@@ -74,6 +74,9 @@ h1, .h1 {
   margin-top: 3rem;
   font-size: 3rem;
   line-height: 1.05;
+  @media (max-width: 991px) {
+    font-size: 2.5rem;
+  }
 }
 h2, .h2 {
   font-size: 2rem;

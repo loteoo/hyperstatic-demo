@@ -5,6 +5,7 @@ import { hyperstatic, onRouteChanged, Options } from 'hyperstatic'
 import Loader from '/components/core/Loader'
 import App from '/components/core/App'
 import { highLight } from '/effects'
+import { CloseMenu } from './actions'
 
 const routes = {
   '/': import('./pages/HomePage'),
@@ -32,7 +33,10 @@ hyperstatic({
   subscriptions: (state) => {
     console.log('State: ', state)
     return [
-      onRouteChanged((state) => [state, highLight()])
+      onRouteChanged((state) => [
+        CloseMenu(state),
+        highLight()
+      ])
     ]
   }
 })

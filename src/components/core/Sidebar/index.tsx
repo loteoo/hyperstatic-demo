@@ -44,7 +44,7 @@ const MainLinkItem = ({ href, label }) => (
 const Sidebar = ({ menuOpened }) => (
   <aside class={{
     [styles.sidebar]: true,
-    opened: menuOpened
+    [styles.opened]: menuOpened,
   }}>
     <Header />
     <button class={styles.menuToggler} aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>

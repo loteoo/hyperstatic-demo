@@ -10,6 +10,7 @@
   width: 100%;
   max-width: var(--sidebar-width);
 
+
   li::before {
     content: none;
   }
@@ -23,11 +24,14 @@
 
 
 .menu-toggler {
-  position: relative;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   z-index: 50;
   font-size: 0;
   padding: 0;
   border: none;
+  display: none;
 }
 
 .menu-toggler img {
@@ -35,10 +39,47 @@
 }
 
 
-@media (min-width: 992px) {
+@media (max-width: 991px) {
+
   .menu-toggler {
-    display: none;
+    display: block;
   }
+
+  .sidebar {
+    max-width: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    header {
+      display: none;
+      position: fixed;
+      top: 1rem;
+      left: -1rem;
+    }
+    nav {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    &.opened {
+      background-color: var(--background-color);
+      min-height: 100vh;
+      header {
+        display: block;
+      }
+      nav {
+        display: block;
+      }
+      footer {
+        display: flex;
+      }
+    }
+  }
+
 }
 
 

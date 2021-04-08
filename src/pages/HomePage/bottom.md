@@ -90,6 +90,13 @@ h('div', {}, [
 
 The `hyperstatic` command should run *after* a standard static build of your site with your tooling of choice.
 
+Hopefully that was enough to get you started! Checkout the [guide](/guide) for more information, or the [Api reference](/api-reference) for all the information!
+
 ---
 
-Hopefully that was enough to get you started! Checkout the [guide](/guide) for more information, or the [Api reference](/api-reference) for all the information!
+## About this site
+This is site acts as documentation for hyperstatic but also as a demo of it's capabilities. Since each page is prerendered so it should work even with JS disabled. 
+
+Feel free to play around with network throtling to better see how the runtime reacts to slow network conditions.
+
+
