@@ -1,7 +1,7 @@
 import { loadStatic } from 'hyperstatic'
 
-import styles from './character-details.css'
-import { preloadImage } from '/effects'
+import styles from './character-details.module.css'
+import { preloadImage } from '/src/effects'
 
 const HandleCharacter = (state, data) => ({
   ...state,

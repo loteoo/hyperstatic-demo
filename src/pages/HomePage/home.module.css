@@ -28,6 +28,16 @@
       margin: 0 0.375rem;
     }
   }
+
+  @media (max-width: 1199px) {
+    display: block;
+    h4 {
+      margin-bottom: -0.25rem;
+    }
+    p::before {
+      display: none;
+    }
+  }
 }
 
 .actions {

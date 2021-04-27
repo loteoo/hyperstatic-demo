@@ -1,19 +1,18 @@
-import { Link, PathInfo } from 'hyperstatic'
-import Header from '/components/core/Header'
-import Footer from '/components/core/Footer'
-import { CloseMenu, OpenMenu, PreventDefault, ScrollTo } from '/actions'
-import styles from './sidebar.css'
+import { htmlToVdom, Link, PathInfo } from 'hyperstatic'
+import Header from '/src/components/core/Header'
+import Footer from '/src/components/core/Footer'
+import { CloseMenu, OpenMenu } from '/src/actions'
+import styles from './sidebar.module.css'
 
-import homeMenu from '/pages/HomePage/menu.md'
-import docsMenu from '/pages/DocsPage/menu.md'
-import statusEmojis from '/utils/statusEmojis'
+// import homeMenu from '/src/pages/HomePage/menu.md'
+// import docsMenu from '/src/pages/DocsPage/menu.md'
+import statusEmojis from '/src/utils/statusEmojis'
 
 const RoutedMenu = ({ route, ...props}, children) => {
 
   if (window.location.pathname !== route) {
     return false;
   }
-
 
   return (
     <div
@@ -50,8 +49,8 @@ const Sidebar = ({ menuOpened }) => (
     <button class={styles.menuToggler} aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>
       Menu
       {menuOpened
-        ? <img src={require('./close.svg')} alt="Close menu" />
-        : <img src={require('./menu.svg')} alt="Open menu" />
+        ? <img src="/close.svg" alt="Close menu" />
+        : <img src="/menu.svg" alt="Open menu" />
       }
     </button>
     <nav
@@ -66,8 +65,12 @@ const Sidebar = ({ menuOpened }) => (
         <li><MainLinkItem href="/counter" label="Counter" /></li>
         <li><MainLinkItem href="/characters" label="Fetching example" /></li>
       </ul>
-      <RoutedMenu route="/" innerHTML={homeMenu} />
-      <RoutedMenu route="/docs" innerHTML={docsMenu} />
+      <RoutedMenu route="/">
+        {/* {htmlToVdom(homeMenu)} */}
+      </RoutedMenu>
+      <RoutedMenu route="/docs">
+        {/* {htmlToVdom(docsMenu)} */}
+      </RoutedMenu>
 
       {/*
       <RoutedMenu route="/ecosystem" innerHTML={ecosystemLinks} />

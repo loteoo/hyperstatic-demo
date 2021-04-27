@@ -1,10 +1,10 @@
 // Hyperstatic runtime
-import { hyperstatic, onRouteChanged, Options } from 'hyperstatic'
+import { hyperstatic, onRouteChanged, Options, isPrerendering } from 'hyperstatic'
 
 // Root view
-import Loader from '/components/core/Loader'
-import App from '/components/core/App'
-import { highLight } from '/effects'
+import Loader from '/src/components/core/Loader'
+import App from '/src/components/core/App'
+import { highLight } from '/src/effects'
 import { CloseMenu } from './actions'
 
 const routes = {
@@ -27,15 +27,17 @@ const options: Options = {
 hyperstatic({
   routes,
   options,
-  init: [{}, highLight()],
+  init: [
+    {},
+    !isPrerendering() && highLight()
+  ],
   view: App,
-  node: document.getElementById('app'),
   subscriptions: (state) => {
     console.log('State: ', state)
     return [
       onRouteChanged((state) => [
         CloseMenu(state),
-        highLight()
+        !isPrerendering() && highLight()
       ])
     ]
   }

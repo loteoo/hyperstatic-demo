@@ -1,6 +1,6 @@
-import Logo from '/components/core/Logo'
+import Logo from '/src/components/core/Logo'
 
-import styles from './header.css'
+import styles from './header.module.css'
 
 const Header = () => (
   <header class={styles.header}>

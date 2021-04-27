@@ -1,8 +1,8 @@
-import utils from '/styles/utils.css'
+import utils from '/src/styles/utils.module.css'
 import { Link, loadStatic } from 'hyperstatic'
 
-import styles from './character-list.css'
-import statusEmojis from '/utils/statusEmojis'
+import styles from './character-list.module.css'
+import statusEmojis from '/src/utils/statusEmojis'
 
 const HandleCharacters = (state, data) => ({
   ...state,

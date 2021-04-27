@@ -20,7 +20,7 @@ export const scrollTo = (props: ScrollProps) => [scrollFx, props]
 const highLightFx = () => {
   setTimeout(() => {
     requestAnimationFrame(() => {
-      Prism.highlightAllUnder(document.getElementById('app'))
+      Prism.highlightAllUnder(document.getElementById('hyperstatic'))
     })
   })
 }

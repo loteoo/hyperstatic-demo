@@ -1,5 +1,5 @@
-import Button from '/components/ui/Button'
-import styles from './counter.css'
+import Button from '/src/components/ui/Button'
+import styles from './counter.module.css'
 
 // Initial state
 export const init = (state) => ({ ...state, counter: 0 })

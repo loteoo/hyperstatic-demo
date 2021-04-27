@@ -62,9 +62,9 @@ const options = {
 import { hyperstatic } from 'hyperstatic'
 
 // Root view
-import App from '/components/core/App'
-import Header from '/components/core/Header'
-import Footer from '/components/core/Footer'
+import App from '/src/components/core/App'
+import Header from '/src/components/core/Header'
+import Footer from '/src/components/core/Footer'
 
 hyperstatic({
 
@@ -227,8 +227,8 @@ The Router component is simply a hyperapp component that will render the current
 
 ```javascript
 import { Router } from 'hyperstatic'
-import Header from '/components/core/Header'
-import Footer from '/components/core/Footer'
+import Header from '/src/components/core/Header'
+import Footer from '/src/components/core/Footer'
 
 const View = (state) =>  (
   <main>
@@ -281,14 +281,6 @@ const SomeComponent = () => (
 - **...location** - All the info from the [location](#location) object for the linked page
 - **status** - Status value of the targeted page. See [status](#status)
 - **active** - Boolean value for if the page is the currently viewed page
-
-<!-- 
-#### Link props
-The Link component also has some configurable props (other than `href`)
-
-- **eagerLoad prop** - Enable or disable eager loading for this specific link
-- **fastClick prop** - Enable or disable fast clicks for this specific link
- -->
 
 ## navigate effect
 

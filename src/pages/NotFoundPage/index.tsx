@@ -1,6 +1,6 @@
 import { Link } from 'hyperstatic'
 
-import base from '/styles/base.css'
+import base from '/src/styles/base.module.css'
 
 const NotFoundPage = () => (
   <div key="notfound" class={base.markdownContent}>

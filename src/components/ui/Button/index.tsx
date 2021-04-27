@@ -1,5 +1,4 @@
-import { Link } from 'hyperstatic'
-import styles from './button.css'
+import styles from './button.module.css'
 
 const Button = ({ type = 'button', href = '', green = false, ...rest }, children) => {
   const props = {
@@ -11,9 +10,9 @@ const Button = ({ type = 'button', href = '', green = false, ...rest }, children
   }
   if (href) {
     return (
-      <Link href={href} {...props}>
+      <a href={href} {...props}>
         {children}
-      </Link>
+      </a>
     )
   }
   return (

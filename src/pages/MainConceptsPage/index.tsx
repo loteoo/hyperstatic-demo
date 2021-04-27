@@ -1,11 +1,13 @@
-import { Link } from 'hyperstatic'
-import content from './concepts.md'
+import { htmlToVdom, Link } from 'hyperstatic'
+import { html } from './concepts.md'
 
-import base from '/styles/base.css'
+import base from '/src/styles/base.module.css'
 
 const MainConceptsPage = () => (
   <div key="concepts">
-    <div class={base.markdownContent} innerHTML={content} />
+    <div class={base.markdownContent}>
+      {htmlToVdom(html)}
+    </div>
     <Link href="/">Go back to home page</Link>
   </div>
 )

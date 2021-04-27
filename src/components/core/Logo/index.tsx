@@ -1,4 +1,4 @@
-import styles from './logo.css'
+import styles from './logo.module.css'
 
 const Logo = () => (
   <a

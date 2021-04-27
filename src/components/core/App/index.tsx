@@ -1,8 +1,8 @@
-import { Router } from 'hyperstatic'
-import Sidebar from '/components/core/Sidebar'
+import { Router, isPrerendering } from 'hyperstatic'
+import Sidebar from '/src/components/core/Sidebar'
 
-import '/styles/base.css'
-import app from './app.css'
+import '/src/styles/base.module.css'
+import app from './app.module.css'
 
 const HandleClicks = (state, ev) => {
 

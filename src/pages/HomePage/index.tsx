@@ -1,10 +1,12 @@
-import intro from './intro.md'
-import bottom from './bottom.md'
+import { Link, htmlToVdom } from 'hyperstatic'
 
-import base from '/styles/base.css'
-import home from './home.css'
-import Button from '/components/ui/Button'
-import { Link } from 'hyperstatic'
+import Button from '/src/components/ui/Button'
+
+import { html as intro } from './intro.md'
+import { html as bottom } from './bottom.md'
+
+import base from '/src/styles/base.module.css'
+import home from './home.module.css'
 
 const HomePage = () => (
   <div key="home">
@@ -37,12 +39,12 @@ const HomePage = () => (
     </div>
     <hr/>
     <div class={base.markdownContent}>
-      <div innerHTML={intro} />
+      {htmlToVdom(intro)}
       <Button green href="https://github.com/loteoo/hyperstatic-starter/generate" target="_blank">
         Use the template
       </Button>
       <hr />
-      <div innerHTML={bottom} />
+      {htmlToVdom(bottom)}
     </div>
   </div>
 )
