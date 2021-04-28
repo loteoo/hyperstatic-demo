@@ -14,7 +14,7 @@ const CounterPage = (state) => (
     <h2>Counter component</h2>
     <p>It's code, view and logic was loaded asynchronously.</p>
     <p>Notice how it's still using the global app state.</p>
-    <p>Have a look at it's code <a href="https://github.com/loteoo/hyperstatic-demo/blob/master/src/app/pages/Counter.jsx" target="_blank" rel="noopener noreferrer">here</a>!</p>
+    <p>Have a look at it's code <a href="https://github.com/loteoo/hyperstatic-demo/blob/master/src/pages/CounterPage/index.tsx" target="_blank" rel="noopener noreferrer">here</a>!</p>
     <div class={styles.counter}>
       <h1>{state.counter}</h1>
       <div class={styles.buttons}>
