@@ -1,0 +1,5 @@
+- [Intro](#top)
+- [Getting started](#getting-started)
+  - [Starter template](#🚀-starter-template)
+  - [Installation in an existing hyperapp project](#installation-in-an-existing-hyperapp-project)
+- [About this site](#about-this-site)

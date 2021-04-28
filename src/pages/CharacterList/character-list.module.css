@@ -1,0 +1,22 @@
+
+.listContainer {
+  max-width: 32rem;
+}
+
+.card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--divider-color);
+  border-radius: 0.25rem;
+  &:hover {
+    background-color: var(--alt-background-color);
+    text-decoration: none;
+  }
+}
+
+.cardTitle {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,6 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  margin-top: auto;
+}

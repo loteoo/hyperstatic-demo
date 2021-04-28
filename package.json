@@ -1,50 +1,33 @@
 {
   "version": "1.0.0",
-  "name": "hyperstatic-demo",
-  "description": "Hyperapp static site generator",
-  "author": "Alexandre Lotte",
-  "license": "MIT",
+  "name": "hyperapp-starter",
+  "description": "Hyperapp PWA starter",
+  "author": "Alexandre Lotte <dev@alexlotte.ca>",
   "scripts": {
-    "start": "parcel src/index.html --open",
-    "build": "rimraf .cache && rimraf dist && parcel build ./src/index.html --no-source-maps --detailed-report && workbox generateSW workbox-config.js",
-    "render-pages": "npm run build && node ./render-pages.js",
-    "init-git": "rm -rf .git && git init && git add . && git commit -m 'Boilerplate files'"
-  },
-  "babel": {
-    "plugins": [
-      [
-        "babel-plugin-jsx-pragmatic",
-        {
-          "module": "hyperapp",
-          "import": "h",
-          "export": "h"
-        }
-      ]
-    ]
+    "dev": "vite",
+    "build": "vite build",
+    "prerender": "npm run build && hyperstatic",
+    "preview": "vite preview --port 8080",
+    "lint": "eslint \"./src/**/*.{js,jsx}\" --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
   },
   "dependencies": {
-    "hyperapp": "^2.0.1",
-    "hyperstatic": "^0.2.6",
-    "node-fetch": "^2.6.0",
-    "sanitize.css": "^10.0.0"
+    "hyperapp": "^2.0.15",
+    "hyperapp-jsx-pragma": "^1.3.0",
+    "hyperstatic": "^2.0.4-rc.2",
+    "prismjs": "^1.23.0",
+    "sanitize.css": "^12.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "babel-core": "^7.0.0-0",
-    "babel-eslint": "^10.0.2",
-    "babel-plugin-jsx-pragmatic": "^1.0.2",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-react": "^7.13.0",
-    "eslint-plugin-standard": "^4.0.0",
-    "hygen": "^4.0.2",
-    "marked": "^0.6.2",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-static-files-copy": "^2.1.2",
-    "rimraf": "^2.6.3",
-    "workbox-cli": "^4.3.1"
-  }
+    "markdown-it-anchor": "^7.1.0",
+    "marked": "^2.0.1",
+    "postcss-nested": "^4.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.4",
+    "vite": "^2.1.5",
+    "vite-plugin-markdown": "^2.0.2"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }

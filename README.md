@@ -1,4 +1,3 @@
-
 # Hyperapp static site generator
 Demo site for the 🚀 static site generator
 

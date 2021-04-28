@@ -1,0 +1,19 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 8rem;
+  margin: 1rem 0;
+  h1 {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  button {
+    font-size: 2rem;
+  }
+}
