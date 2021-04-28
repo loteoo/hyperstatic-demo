@@ -109,7 +109,7 @@ A page is simply a javascript module (javascript file) that exports a standard h
 
 These view functions will receive the full state of the hyperapp app as the argument.
 
-Pages can also have export an [init](#init) hyperapp action to prepare the state and load data.
+Pages can also export an [init](#init-action) hyperapp action to prepare the state and load data.
 
 #### init action
 

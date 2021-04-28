@@ -22,7 +22,7 @@ const highLightFx = () => {
     requestAnimationFrame(() => {
       Prism.highlightAllUnder(document.getElementById('hyperstatic'))
     })
-  })
+  }, 50)
 }
 
 export const highLight = () => [highLightFx]
