@@ -4,7 +4,7 @@ import { hyperstatic, onRouteChanged, Options, isPrerendering } from 'hyperstati
 // Root view
 import Loader from '/src/components/core/Loader'
 import App from '/src/components/core/App'
-import { highLight } from '/src/effects'
+import { bodyScrollLock, highLight } from '/src/effects'
 import { CloseMenu } from './actions'
 
 const routes = {
@@ -37,6 +37,7 @@ hyperstatic({
     return [
       onRouteChanged((state) => [
         CloseMenu(state),
+        bodyScrollLock(false),
         !isPrerendering() && highLight()
       ])
     ]

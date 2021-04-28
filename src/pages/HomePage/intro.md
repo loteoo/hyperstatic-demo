@@ -1,4 +1,4 @@
-**Hyperstatic** is a thin navigation layer on top of [hyperapp](https://github.com/jorgebucaran/hyperapp) that helps create *fast* and SEO friendly **static sites**.
+**Hyperstatic** is a small navigation layer on top of [hyperapp](https://github.com/jorgebucaran/hyperapp) that helps create *fast* and SEO friendly **static sites**.
 
 It's goal is to be a simpler, lighter and faster Gatsby, that uses hyperapp instead of React, with a runtime of ~4kb total. (hyperapp + hyperstatic runtime)
 

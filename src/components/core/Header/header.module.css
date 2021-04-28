@@ -1,3 +1,49 @@
 .header {
   padding: 0 2rem;
+  display: flex;
+  @media (max-width: 991px) {
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    &:not(.opened) > a {
+      display: none;
+    }
+    &.opened {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -3rem;
+        z-index: -1;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0)
+        );
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    padding: 1rem;
+  }
+}
+
+.menu-toggler {
+  margin-left: auto;
+  font-size: 0;
+  padding: 0;
+  border: none;
+  display: none;
+  @media (max-width: 991px) {
+    display: block;
+  }
+}
+
+.menu-toggler img {
+  width: 2rem;
 }

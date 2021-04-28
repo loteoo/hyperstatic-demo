@@ -164,9 +164,13 @@ code {
   padding: 0.2em 0.4em;
 }
 
-pre code {
-  display: block;
-  padding: 1em;
+pre {
+  background-color: var(--alt-background-color);
+  code {
+    display: block;
+    padding: 1em;
+    background-color: transparent;
+  }
 }
 
 hr {

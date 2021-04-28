@@ -1,6 +1,12 @@
 .hero h1 {
   margin: 0;
   max-width: 9em;
+  @media (max-width: 420px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 360px) {
+    font-size: 1.75rem;
+  }
 }
 
 .features-grid {

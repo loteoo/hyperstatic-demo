@@ -12,7 +12,7 @@ import { hyperstatic } from "hyperstatic";
 hyperstatic({ routes, options, ...regularHyperappConfig })
 ```
 
-Initialize the hyperstatic runtime. This replaces your regular `app` call in a hyperapp app. It uses all the same options (`init`, `view`, `node`, `subscriptions`), but adds 2 extra properties: [routes](#routes) and [options](#options)
+Initialize the hyperstatic runtime. This replaces your regular `app` call in a hyperapp app. It uses most of the same options (`init`, `view`, `subscriptions`), and adds 2 extra properties: [routes](#routes) and [options](#options)
 
 #### routes
 
@@ -36,7 +36,7 @@ const routes = {
 
 #### options
 
-Simple `options` object:
+Sample `options` object:
 
 ```javascript
 const options = {
@@ -59,10 +59,9 @@ const options = {
 
 ```javascript
 // Hyperstatic runtime
-import { hyperstatic } from 'hyperstatic'
+import { hyperstatic, Router } from 'hyperstatic'
 
-// Root view
-import App from '/src/components/core/App'
+// View components
 import Header from '/src/components/core/Header'
 import Footer from '/src/components/core/Footer'
 
@@ -89,11 +88,11 @@ hyperstatic({
 
   // App view
   view: (state) => (
-    <main>
-      <Header />
-      <Router />
-      <Footer />
-    </main>
+    h('div', {}, [
+      Header(),
+      Router(),
+      Footer(),
+    ])
   ),
 
   // Regular subs array
@@ -160,7 +159,7 @@ export default CounterPage
 
 </details>
 
-The init action actually receives a parameter: a [location](#location) object with route information about the page that is being initialized.
+The init action actually receives a parameter: a [location](#location-object) object with route information about the page that is being initialized.
 
 
 #### loadStatic effect
@@ -278,7 +277,7 @@ const SomeComponent = () => (
 )
 ```
 
-- **...location** - All the info from the [location](#location) object for the linked page
+- **...location** - All the info from the [location](#location-object) object for the linked page
 - **status** - Status value of the targeted page. See [status](#status)
 - **active** - Boolean value for if the page is the currently viewed page
 

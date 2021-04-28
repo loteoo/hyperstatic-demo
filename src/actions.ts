@@ -10,13 +10,9 @@ export const CloseMenu = (state) => ({
   menuOpened: false
 })
 
-
-
 export const ScrollTo = (state, ev) => [
   CloseMenu(state),
-  [
-    scrollTo({ id: ev.target.href.split('#')[1] })
-  ]
+  scrollTo({ id: ev.target.href.split('#')[1] })
 ]
 
 export const PreventDefault = (state, ev) => {

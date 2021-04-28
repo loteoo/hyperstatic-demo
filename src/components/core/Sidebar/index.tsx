@@ -1,16 +1,16 @@
 import { htmlToVdom, Link, PathInfo } from 'hyperstatic'
 import Header from '/src/components/core/Header'
 import Footer from '/src/components/core/Footer'
-import { CloseMenu, OpenMenu } from '/src/actions'
 import styles from './sidebar.module.css'
 
-// import homeMenu from '/src/pages/HomePage/menu.md'
-// import docsMenu from '/src/pages/DocsPage/menu.md'
+import { html as homeMenu } from '/src/pages/HomePage/menu.md'
+import { html as docsMenu } from '/src/pages/DocsPage/menu.md'
 import statusEmojis from '/src/utils/statusEmojis'
 
-const RoutedMenu = ({ route, ...props}, children) => {
 
-  if (window.location.pathname !== route) {
+const RoutedMenu = ({ route, location, ...props}, children) => {
+
+  if (location.path !== route) {
     return false;
   }
 
@@ -40,19 +40,12 @@ const MainLinkItem = ({ href, label }) => (
   </Link>
 )
 
-const Sidebar = ({ menuOpened }) => (
+const Sidebar = ({ menuOpened, location }) => (
   <aside class={{
     [styles.sidebar]: true,
     [styles.opened]: menuOpened,
   }}>
-    <Header />
-    <button class={styles.menuToggler} aria-expanded={menuOpened} aria-controls="menu" onclick={menuOpened ? CloseMenu : OpenMenu}>
-      Menu
-      {menuOpened
-        ? <img src="/close.svg" alt="Close menu" />
-        : <img src="/menu.svg" alt="Open menu" />
-      }
-    </button>
+    <Header menuOpened={menuOpened} />
     <nav
       id="menu"
       class="menu"
@@ -65,17 +58,12 @@ const Sidebar = ({ menuOpened }) => (
         <li><MainLinkItem href="/counter" label="Counter" /></li>
         <li><MainLinkItem href="/characters" label="Fetching example" /></li>
       </ul>
-      <RoutedMenu route="/">
-        {/* {htmlToVdom(homeMenu)} */}
+      <RoutedMenu location={location} route="/">
+        {htmlToVdom(homeMenu)}
       </RoutedMenu>
-      <RoutedMenu route="/docs">
-        {/* {htmlToVdom(docsMenu)} */}
+      <RoutedMenu location={location} route="/docs">
+        {htmlToVdom(docsMenu)}
       </RoutedMenu>
-
-      {/*
-      <RoutedMenu route="/ecosystem" innerHTML={ecosystemLinks} />
-      <RoutedMenu route="/tutorial" innerHTML={tutoLinks} /> */}
-
     </nav>
     <Footer />
   </aside>

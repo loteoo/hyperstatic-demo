@@ -18,7 +18,7 @@ const App = (state) => {
   return (
     <div class={app.app} onclick={HandleClicks}>
       <div class={app.cols}>
-        <Sidebar menuOpened={state.menuOpened} />
+        <Sidebar menuOpened={state.menuOpened} location={state.location} />
         <main class={app.mainContent}>
           <Router />
         </main>

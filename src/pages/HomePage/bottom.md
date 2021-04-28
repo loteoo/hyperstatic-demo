@@ -14,18 +14,25 @@
 npm i hyperstatic
 ```
 
-2. Replace hyperapp's `app` function call with `hyperstatic`. Remove the `node` prop.
+2. Replace hyperapp's `app` function call with `hyperstatic`. Remove the `node` prop. Provide a `<div>` with the id `hyperstatic` in your HTML.
 
 ```javascript
 hyperstatic({
   init: {},
-  view: App,
+  view: (state) => h('h1', {}, text('Hello!')),
 })
 ```
+```html
+<body>
+  <!-- ... -->
+  <div id="hyperstatic"></div>
+  <!-- ... -->
+</body>
+```
 
-3. Make sure have pages that you want to route in your project, each with it's own file. The view function should be the default export. [More info on pages](/docs#pages)
+3. Make sure you have pages that you want to route in your project, each with it's own file. Each file should export a view function as the default export. [More info on pages](/docs#pages)
 
-4. Add routing for your pages with the extra `routes` object that is needed. The keys are your routes and the value are the page imports.   
+4. Add routing for your pages with the extra `routes` object that is needed. The keys are your routes patterns and the values are the page dynamic imports.   
 
 ```javascript
 hyperstatic({
@@ -48,18 +55,22 @@ hyperstatic({
 import { Router } from 'hyperstatic'
 
 // Hyperscript
-h('div', {}, [
-  Header(),
-  Router(),
-  Footer(),
-])
+const RootView = (state) => (
+  h('div', {}, [
+    Header(),
+    Router(), // <-- Here
+    Footer(),
+  ])
+)
 
 // JSX
-<div>
-  <Header />
-  <Router />
-  <Footer />
-</div>
+const RootView = (state) => (
+  <div>
+    <Header />
+    <Router />{/* <-- here */}
+    <Footer />
+  </div>
+)
 ```
 
 6. Link to your pages using the `Link` component.   
@@ -76,7 +87,9 @@ h('div', {}, [
 
 // JSX
 <div>
-  <Link href="/other-page">Link to other page</Link>
+  <Link href="/other-page">
+    Link to other page
+  </Link>
 </div>
 ```
 
@@ -88,9 +101,9 @@ h('div', {}, [
 }
 ```
 
-The `hyperstatic` command should run *after* a standard static build of your site with your tooling of choice.
+The `hyperstatic` command should run *after* a normal static build of your site with your tooling of choice.
 
-Hopefully that was enough to get you started! Checkout the [guide](/guide) for more information, or the [Api reference](/api-reference) for all the information!
+Hopefully that was enough to get you started! Checkout the [docs](/docs) for more info!
 
 ---
 

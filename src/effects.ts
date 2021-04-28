@@ -33,3 +33,10 @@ const preloadImageFx = (_dispatch, src) => {
 }
 
 export const preloadImage = (src) => [preloadImageFx, src]
+
+
+const bodyScrollLockFx = (_dispatch, value) => {
+  document.body.style.overflow = value ? 'hidden' : 'auto';
+}
+
+export const bodyScrollLock = (value) => [bodyScrollLockFx, value]
