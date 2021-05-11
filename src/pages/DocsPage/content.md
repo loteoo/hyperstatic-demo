@@ -20,17 +20,23 @@ Object specifying the routes for your site.
 
 The keys are [path-to-regexp](https://github.com/pillarjs/path-to-regexp) route patterns and the values are [pages](#pages) (hyperapp view functions) receiving the state. The page should be imported via a [dynamic import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#dynamic_imports) statement for code splitting.
 
+You can optionally opt-out of code splitting on a page per page basis by using the `*` import syntax.
+
 Sample `routes` object:
 
 ```javascript
+
+import * as SomeOtherPage from './src/pages/SomeOtherPage'
+
 const routes = {
   '/': import('./pages/HomePage'),
-  '/quick-start': import('./pages/QuickStartPage'),
-  '/docs': import('./pages/DocumentationPage'),
-  '/counter': import('./pages/CounterPage'),
-  '/characters': import('./pages/CharacterList'),
-  '/characters/:id': import('./pages/CharacterDetails'),
-  '/:splat*': import('./pages/NotFoundPage')
+  '/secondary-page': import('./pages/SecondaryPage'),
+  '/items': import('./pages/CharacterList'),
+  '/items/:id': import('./pages/CharacterDetails'),
+  '/foo/:splat*': import('./pages/CatchAll'),
+
+  // This one is part of the "global" bundle, always loaded
+  '/some-other-page': SomeOtherPage,
 }
 ```
 
@@ -41,7 +47,8 @@ Sample `options` object:
 ```javascript
 const options = {
   baseUrl: '/',
-  loader: Loader,
+  loader: CustomLoader,
+  notFound: CustomNotFoundPage,
   fastClicks: true,
   eagerLoad: true
 }
@@ -49,8 +56,10 @@ const options = {
 
 - **baseUrl** - Base URL to prepend to all routes, useful when deploying on a sub path
 - **loader** - Custom loader view component in case of very slow network connections
+- **notFound** - Custom "404 page not found" view component
 - **fastClicks** - Navigate `onmousedown` instead of `onmouseclick` for extra *snappiness* 💨
 - **eagerLoad** - Prefetch pages when links pointing to them enters the viewport
+- **navigationDelay** - Default value for the `delay` on the [navigate effect](#navigate-effect) when called internally by hyperstatic
 
 
 
@@ -281,6 +290,8 @@ const SomeComponent = () => (
 - **status** - Status value of the targeted page. See [status](#status)
 - **active** - Boolean value for if the page is the currently viewed page
 
+
+
 ## navigate effect
 
 The `navigate` effect is an hyperapp effect provided by hyperstatic to do client-side pushstate navigation programatically.
@@ -288,14 +299,45 @@ The `navigate` effect is an hyperapp effect provided by hyperstatic to do client
 ```javascript
 import { navigate } from 'hyperstatic'
 
-const SomeAction = (state) => [state, navigate('/some-page')]
+const SomeAction = (state) => [state, navigate({ to: '/some-page' })]
 ```
 
+It's options:
+
+- **to** - Path to navitate to
+- **delay** - Delay in ms to wait before changing the location. Useful for transitions.
+
+You can track the start of the navigation effect with the [onRouteChangeStart](#onRouteChangeStart) subscription, and the completion of the effect with the [onRouteChanged](#onRouteChanged) subscription.
+
+
+## onRouteChangeStart subscription
+
+The `onRouteChangeStart` subscription is a hyperapp subscription provided by hyperstatic to run an action when the location changes.
+
+```javascript
+import { hyperstatic, onRouteChangeStart } from 'hyperstatic'
+
+hyperstatic({
+  routes,
+  options,
+  init: {},
+  view: App,
+  subscriptions: () => [
+    onRouteChangeStart({
+      action: (state) => [
+        StartFadeOutTransition(state),
+        makeNoiseEffect(state)
+      ]
+    })
+  ]
+})
+
+```
 
 
 ## onRouteChanged subscription
 
-The `onRouteChanged` subscription is a hyperapp subscription provided by hyperstatic to run an action on every navigation event. Useful for running an action after every navigation.
+The `onRouteChanged` subscription is a hyperapp subscription provided by hyperstatic to run an action when the location changes.
 
 ```javascript
 import { hyperstatic, onRouteChanged } from 'hyperstatic'
@@ -306,11 +348,12 @@ hyperstatic({
   init: {},
   view: App,
   subscriptions: () => [
-    onRouteChanged((state) => [
-      CloseMenuAction(state),
-      makeNoiseEffect(),
-      registerPageViewEffect()
-    ])
+    onRouteChanged({
+      action: (state) => [
+        CloseMenuAction(state),
+        registerPageViewEffect()
+      ]
+    })
   ]
 })
 

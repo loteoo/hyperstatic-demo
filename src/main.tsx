@@ -14,7 +14,6 @@ const routes = {
   '/counter': import('./pages/CounterPage'),
   '/characters': import('./pages/CharacterList'),
   '/characters/:id': import('./pages/CharacterDetails'),
-  '/:splat*': import('./pages/NotFoundPage')
 }
 
 // All of these are optional
@@ -35,11 +34,13 @@ hyperstatic({
   subscriptions: (state) => {
     console.log('State: ', state)
     return [
-      onRouteChanged((state) => [
-        CloseMenu(state),
-        bodyScrollLock(false),
-        !isPrerendering() && highLight()
-      ])
+      onRouteChanged({
+        action: (state) => [
+          CloseMenu(state),
+          bodyScrollLock(false),
+          !isPrerendering() && highLight()
+        ]
+      })
     ]
   }
 })

@@ -12,7 +12,7 @@ const Logo = () => (
       hyperstatic
       <sup>
         <code>
-          2.0.4
+          2.1.1
         </code>
       </sup>
     </h2>

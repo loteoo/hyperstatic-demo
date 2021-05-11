@@ -1,6 +1,6 @@
 **Hyperstatic** is a small navigation layer on top of [hyperapp](https://github.com/jorgebucaran/hyperapp) that helps create *fast* and SEO friendly **static sites**.
 
-It's goal is to be a simpler, lighter and faster Gatsby, that uses hyperapp instead of React, with a runtime of ~4kb total. (hyperapp + hyperstatic runtime)
+It's goal is to be a simpler, lighter and faster Gatsby, that uses hyperapp instead of React, with a runtime of ~9kb. (hyperapp + hyperstatic, gzip)
 
 It's TypeScript codebase has an inherently small footprint by using Puppeteer for pre-rendering and dynamic imports for code-splitting.
 

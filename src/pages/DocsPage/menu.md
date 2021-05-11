@@ -8,6 +8,7 @@
 - [Link component](#link-component)
   - [Function as Child pattern](#function-as-child-pattern)
 - [navigate effect](#navigate-effect)
+- [onRouteChangeStart](#onroutechangestart-subscription)
 - [onRouteChanged](#onroutechanged-subscription)
 - [State](#state)
   - [location object](#location-object)
