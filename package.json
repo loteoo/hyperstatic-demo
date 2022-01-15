@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "markdown-it-anchor": "^7.1.0",
-    "marked": "^2.0.1",
+    "marked": "^4.0.10",
     "postcss-nested": "^4.2.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.2.4",
